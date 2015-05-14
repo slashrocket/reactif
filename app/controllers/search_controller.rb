@@ -1,5 +1,7 @@
 class SearchController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:slack]
+  require 'json'
+  require 'httparty'
 
   def index
   end
@@ -12,8 +14,18 @@ class SearchController < ApplicationController
       @found = Scraper.getgif(params[:text])
       @channel = params[:channel_name]
       if @found.present?
-        return render 'slackresponse.js.erb' 
-        #return render json: @found.first
+        @responselink = "<" + @found.first + "|" + @found.first + ">"
+        @responsechannel = "#" + @channel
+        HTTParty.post(ENV['SLACK_WEBHOOK_URL'],
+        {
+        body: {
+          payload: {
+            channel: @responsechannel,
+            text: @responselink
+          }.to_json
+        },
+        })
+        return render json: @found.first
       else
         return render json: "No gifs found"
       end

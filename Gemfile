@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 
 gem 'nokogiri'
+gem 'httparty'
 
 group :development, :test do
   gem 'byebug'
