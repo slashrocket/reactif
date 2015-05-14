@@ -17,7 +17,9 @@ class SearchController < ApplicationController
       @username = params[:user_name]
       @command = params[:command]
       if @text == 'upvote'
+        Teamgif.upvote(id, team)
       elsif @text == 'downvote'
+        Teamgif.downvote(id, team)
       end
       @random_image = @found.sample
       if @found.present?
