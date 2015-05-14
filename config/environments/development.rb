@@ -55,3 +55,4 @@ Rails.application.configure do
     #Bullet.airbrake = true #we dont use airbrake
     Bullet.add_footer = true
 end
+end
