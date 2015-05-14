@@ -1,0 +1,79 @@
+<% @user = User.new %>
+<!-- sign in modal overlay -->
+<!-- user sign in -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="usersignin" id="usersignin" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <h3 align="center"> User Sign In</h3>
+      <%= form_for(@user, as: @user, url: session_path(@user), method: :post) do |f| %>
+      <div class="row">
+      <div class="form-group col-xs-8 col-xs-offset-2" align="center">
+      <%= f.label :email, class: 'control-label pull-left' %><br />
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+    </div>
+
+      <div class="row">
+      <div class="form-group col-xs-8 col-xs-offset-2" align="center">
+      <%= f.label :password, class: 'control-label pull-left' %><br />
+      <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+    </div>
+    </div>
+
+      <div class="row">
+      <div class="form-group col-xs-8 col-xs-offset-2" align="center">
+        <%= f.check_box :remember_me %> <%= f.label :remember_me, class: "dark"%>
+      </div>
+    </div>
+      <div class="row">
+      <div class="form-group col-xs-6 col-xs-offset-3" align="center">
+        <%= f.submit "Sign in", class: 'btn-primary', data: { disable_with: "processing..." } %>
+      </div>
+      </div>
+      <div class="row">
+		  <div class="form-group col-xs-6 col-xs-offset-3" align="center">
+		  </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+<!-- user registration-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="usersignup" id="usersignup" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <h3 align="center">User Registration</h3>
+      <%= form_for(@user, as: @user, url: registration_path(@user)) do |f| %>
+      <div class="row">
+      <div class="form-group col-xs-8 col-xs-offset-2" align="center">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Username" %>
+      </div>
+      </div>
+
+      <div class="row">
+      <div class="form-group col-xs-8 col-xs-offset-2" align="center">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control', placeholder: "Email" %>
+      </div>
+      </div>
+
+      <div class="row">
+      <div class="form-group col-xs-8 col-xs-offset-2" align="center">
+        <%= f.label :password, 'Password (minimum 8 characters)' %>
+        <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: "Password" %>
+      </div>
+      </div>
+        <div class="row">
+        <div class="form-group" align="center">
+          <%= f.submit "Sign up", class: 'btn-primary', data: { disable_with: "saving..." } %>
+        </div>
+        </div>
+        <div class="row">
+        <div class="form-group col-xs-6 col-xs-offset-3" align="center">
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
