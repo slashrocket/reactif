@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gif_id: 
+  team_id: 
+  votes: 1
+
+two:
+  gif_id: 
+  team_id: 
+  votes: 1

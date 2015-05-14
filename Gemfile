@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
+
 gem 'rails'
 gem 'sqlite3'
 gem 'sass-rails'
@@ -25,4 +27,8 @@ group :development, :test do
   gem 'pry' # debugging from console anywhere
   gem 'better_errors' # neat error pages
   gem 'binding_of_caller' # turns debugging at error page
+end
+
+group :production do
+  gem 'pg'
 end
