@@ -1,5 +1,5 @@
 module ApplicationHelper
-  #for nice notifications with toastr
+  # for nice notifications with toastr
   def custom_bootstrap_flash
     flash_messages = []
     flash.each do |type, message|
