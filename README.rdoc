@@ -5,3 +5,9 @@ Output better gif responses to slack
 === environment variables
 
 SLACK_WEBHOOK_URL = <your incoming webhook url>
+
+=== dev testing
+
+You can send get requests directly to your dev box to have it send to your slack channel via the following:
+
+<dev box url>/search/slack?text=<search text query>&channel_name=<channel to test>&user_name=<test username>
