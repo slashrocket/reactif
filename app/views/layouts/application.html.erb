@@ -18,6 +18,8 @@
     <% if notice or alert %>
       <%= custom_bootstrap_flash %>
     <% end %>
-    <%= yield %>
+    <div class="container mainpage">
+        <%= yield %>
+    </div>
 </body>
 </html>
