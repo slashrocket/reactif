@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150514182325) do
+ActiveRecord::Schema.define(version: 20150514212601) do
 
   create_table "gifs", force: :cascade do |t|
     t.string   "word"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20150514182325) do
 
   add_index "gifs", ["url"], name: "index_gifs_on_url"
   add_index "gifs", ["word"], name: "index_gifs_on_word"
+
+  create_table "taglines", force: :cascade do |t|
+    t.string   "header"
+    t.string   "query"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "teamgifs", force: :cascade do |t|
     t.integer  "gif_id"
