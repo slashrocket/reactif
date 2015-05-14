@@ -1,3 +1,5 @@
-<% @found.each do |x| %>
-    <li><a href=<%=x%>><%=image_tag x%></a></li>
+<% if @found_images.present? %>
+    <%= render partial: 'search/images', collection: @found_images, as: :image %>
+<% else %>
+    <%= render partial: 'search/nothing_found' %>
 <% end %>
