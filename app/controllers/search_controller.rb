@@ -29,7 +29,7 @@ class SearchController < ApplicationController
           }.to_json
         },
         })
-        return render json: @found.first
+        return render :nothing => true
       else
         return render json: "No gifs found"
       end
