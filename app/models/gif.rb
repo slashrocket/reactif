@@ -1,6 +1,11 @@
-class Scraper < ActiveRecord::Base
+class Gif < ActiveRecord::Base
   require 'uri'
-
+  has_many :teams
+  has_many :teamgifs
+  
+  validates :url, presence: true
+  validates :word, presence: true
+  
   def self.getgif(searchfor)
     return nil unless searchfor.present?
     encodedsearch = URI.encode(searchfor)

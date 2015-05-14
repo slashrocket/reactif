@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
+
 gem 'rails'
 gem 'sqlite3'
 gem 'sass-rails'
@@ -22,4 +24,8 @@ group :development, :test do
   gem 'quiet_assets' # Turns off the Rails asset pipeline log
   gem 'bullet' # help reduce sql query speeds
   gem 'lol_dba' # helps scan for better indexing
+end
+
+group :production do
+  gem 'pg'
 end
