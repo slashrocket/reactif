@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
-
 gem 'rails'
 gem 'sqlite3'
 gem 'sass-rails'
@@ -13,6 +11,7 @@ gem 'jbuilder'
 gem 'sdoc', group: :doc
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
+gem 'devise'
 gem 'nokogiri'
 gem 'httparty'
 gem 'figaro'

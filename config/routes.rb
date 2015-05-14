@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   match 'search', to: 'search#index', via: [:get, :post], as: 'search_path'
   match 'search/found/', to: 'search#show', via: 'get', as: 'show_search_path'
   match 'search/slack/', to: 'search#slack', via: [:get, :post], as: 'slack_search_path'
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
 end
