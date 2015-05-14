@@ -10,8 +10,10 @@ class SearchController < ApplicationController
   
   def slack
       @found = Scraper.getgif(params[:text])
+      @channel = params[:channel_name]
       if @found.present?
-        return render json: @found.first
+        return render 'slackresponse.js.erb' 
+        #return render json: @found.first
       else
         return render json: "No gifs found"
       end
