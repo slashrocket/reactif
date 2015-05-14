@@ -12,14 +12,18 @@ class SearchController < ApplicationController
   
   def slack
       @found = Scraper.getgif(params[:text])
+      @text = params[:text]
       @channel = params[:channel_name]
+      @username = params[:user_name]
+      @command = params[:command]
       if @found.present?
-        @responselink = "<" + @found.first + "|" + @found.first + ">"
+        @responselink = @found + " <" + @found.first + "|" + @found.first + ">"
         @responsechannel = "#" + @channel
         HTTParty.post(ENV['SLACK_WEBHOOK_URL'],
         {
         body: {
           payload: {
+            username: @username,
             channel: @responsechannel,
             text: @responselink
           }.to_json
