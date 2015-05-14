@@ -16,10 +16,11 @@ class SearchController < ApplicationController
       @channel = params[:channel_name]
       @username = params[:user_name]
       @command = params[:command]
+      @domain = params[:team_domain]
       if @text == 'upvote'
-        Teamgif.upvote(id, team)
+        Teamgif.upvote(id, @domain)
       elsif @text == 'downvote'
-        Teamgif.downvote(id, team)
+        Teamgif.downvote(id, @domain)
       end
       @random_image = @found.sample
       if @found.present?
