@@ -69,7 +69,8 @@ def post_gif_to_slack(image, text, channel, username)
   responselink = " /reactif " + text + "    <" + image + "?" + Random.rand(500).to_s + "|" + image + ">"
   responsechannel = "#" + channel
   HTTParty.post(ENV['SLACK_WEBHOOK_URL'],
-                {
+                <<<<<<< HEAD
+  {
     body: {
       payload: {
         username: username,
@@ -77,10 +78,25 @@ def post_gif_to_slack(image, text, channel, username)
         text: responselink
       }.to_json
     },
-  })
+    =======
+    {
+      body: {
+        payload: {
+          username: username,
+          channel: responsechannel,
+          text: responselink
+        }.to_json
+      },
+      >>>>>>> 63e78b5d2bf67a5a05a48d283223f9aeb31b0478
+    })
   return render :nothing => true
 end
 
 def vote(channel, id)
+  <<<<<<< HEAD
 
 end
+=======
+
+end
+>>>>>>> 63e78b5d2bf67a5a05a48d283223f9aeb31b0478
