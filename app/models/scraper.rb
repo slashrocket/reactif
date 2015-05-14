@@ -1,12 +1,22 @@
 class Scraper < ActiveRecord::Base
-  require 'uri'
+  include ReactionGIFS
 
-  def self.getgif(searchfor)
-    return nil unless searchfor.present?
-    encodedsearch = URI.encode(searchfor)
-    url = "http://www.reactiongifs.com/?s=#{encodedsearch}&submit=Search"
-    doc = Nokogiri::HTML(open(url))
-    findgifs = doc.css('div.entry p a').map { |link| link['href'] }
-    findgifs
+  class << self
+    def get_gif(search_query)
+      return nil unless search_query.present?
+      @encoded_search_query = encoded_search_query(search_query)
+      gif_links
+    end
+
+    def encoded_search_query(search_query)
+      URI.encode(search_query)
+    end
+
+    # you can add here another gif services
+    def gif_links
+      [
+          reaction_gif_links(@encoded_search_query)
+      ].flatten
+    end
   end
 end

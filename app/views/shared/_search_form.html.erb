@@ -1,0 +1,8 @@
+<%= form_for :search, url: :show_search_path, method: :get do |f| %>
+    <div class="input-group">
+      <%= f.text_field :query, placeholder: 'Search for...', class: 'form-control' %>
+      <span class="input-group-btn">
+        <%= f.submit 'Go!', class: 'btn btn-default' %>
+      </span>
+    </div>
+<% end %>
