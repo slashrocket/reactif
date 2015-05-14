@@ -47,7 +47,7 @@
           </li>
         </ul>
         <div class="navbar-form navbar-right" role="search">
-          <%= form_for :search, url: :show_search_path, method: :get do |f| %>
+          <%= form_for :search, url: show_search_path, method: :get do |f| %>
             <div class="form-group searchnav">
               <%= f.text_field :query, placeholder: "Search for...", class: 'form-control' %>
               <%= f.submit "Go", class: 'btn btn-default' %>

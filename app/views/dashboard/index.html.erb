@@ -1,0 +1,14 @@
+<h3>Welcome to your new gif home, <%= @user.name %>.</h3>
+<br/>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <%= form_for :search, url: show_search_path, method: :get do |f| %>
+        <div class="input-group">
+            <%= f.text_field :query, placeholder: 'Search for...', class: 'form-control' %>
+            <span class="input-group-btn">
+                <%= f.submit "Go!", class: "btn btn-default" %>
+            </span>
+        </div>
+        <% end %>
+    </div>
+</div>
