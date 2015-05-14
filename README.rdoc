@@ -2,6 +2,11 @@
 
 Output better gif responses to slack
 
+=== Usage commands (in slack)
+
+* upvote: upvote the most recently posted gif to that channel, giving it a higher chance of showing up in the future. Ex: '/reactif upvote'
+* downvote: downvote the most recently posted gif to that channel, giving it a lower chance of showing up in the future. Ex: '/reactif downvote'
+
 === environment variables
 
 SLACK_WEBHOOK_URL = <your incoming webhook url>

@@ -16,6 +16,9 @@ class SearchController < ApplicationController
       @channel = params[:channel_name]
       @username = params[:user_name]
       @command = params[:command]
+      if @text == 'upvote' or @text == 'Upvote'
+      elsif @text == 'downvote' or @text == 'Downvote'
+      end
       @random_image = @found.sample
       if @found.present?
         @responselink = " /reactif " + @text + "    <" + @random_image + "?" + Random.rand(500).to_s + "|" + @random_image + ">"
