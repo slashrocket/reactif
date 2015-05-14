@@ -7,8 +7,7 @@ class SearchController < ApplicationController
   end
 
   def show
-    find_gifs_for(params[:search][:query])
-    @found = Scraper.getgif(params[:search][:query])
+    @found = Gif.getgif(params[:search][:query])
   end
 
   def slack
@@ -44,8 +43,7 @@ class SearchController < ApplicationController
   end
 
   def find_gifs_for(query)
-    @found_images = Scraper.get_gif(query)
-    @found = Scraper.getgif(params[:text])
+    @found = Gif.getgif(params[:text])
     @text = params[:text]
     @channel = params[:channel_name]
     @username = params[:user_name]
