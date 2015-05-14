@@ -16,7 +16,7 @@ class SearchController < ApplicationController
       @channel = params[:channel_name]
       @username = params[:user_name]
       @command = params[:command]
-      @random_image = @found[Random.new.rand(0..@found.length-1)]
+      @random_image = @found.sample
       if @found.present?
         @responselink = " /reactif " + @text + "    <" + @random_image + "?" + Random.rand(500).to_s + "|" + @random_image + ">"
         @responsechannel = "#" + @channel
