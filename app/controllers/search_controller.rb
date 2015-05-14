@@ -17,7 +17,7 @@ class SearchController < ApplicationController
       @username = params[:user_name]
       @command = params[:command]
       if @found.present?
-        @responselink = "<" + @found.first + "|" + @found.first + ">"
+        @responselink = " /reactif " + @text + "    <" + @found.first + "?" + Random.rand(500).to_s + "|" + @found.first + ">"
         @responsechannel = "#" + @channel
         HTTParty.post(ENV['SLACK_WEBHOOK_URL'],
         {
