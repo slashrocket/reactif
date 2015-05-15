@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150514212601) do
+ActiveRecord::Schema.define(version: 20150515084750) do
 
   create_table "gifs", force: :cascade do |t|
     t.string   "word"
@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 20150514212601) do
   create_table "teamgifs", force: :cascade do |t|
     t.integer  "gif_id"
     t.integer  "team_id"
-    t.integer  "votes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "votes",      default: 25
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "teamgifs", ["gif_id"], name: "index_teamgifs_on_gif_id"
@@ -45,7 +45,12 @@ ActiveRecord::Schema.define(version: 20150514212601) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.string   "domain"
   end
+
+  add_index "teams", ["domain"], name: "index_teams_on_domain"
+  add_index "teams", ["user_id"], name: "index_teams_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
