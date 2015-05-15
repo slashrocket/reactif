@@ -1,12 +1,20 @@
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
-    <%= form_for :search, url: show_search_path, method: :get do |f| %>
-      <div class="input-group">
-        <%= f.text_field :query, placeholder: 'Search for...', class: 'form-control' %>
-        <span class="input-group-btn">
-          <%= f.submit "Go!", class: "btn btn-default" %>
-        </span>
-      </div>
-    <% end %>
-  </div>
+<div class="mainpage">
+    <div class="brand_header">
+        <h1 class="brand_name">
+            <span id="react">React</span><span id="if">if<span>
+        </h1>
+        <h3 class="tagline">...<%= @tagline.header %></h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <%= form_for :search, url: show_search_path, method: :get do |f| %>
+            <div class="input-group">
+                <%= f.text_field :query, placeholder: @tagline.query, class: 'form-control' %>
+                <span class="input-group-btn">
+                    <%= f.submit "Go!", class: "btn btn-default" %>
+                </span>
+            </div>
+            <% end %>
+        </div>
+    </div>
 </div>
