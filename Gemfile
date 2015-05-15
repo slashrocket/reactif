@@ -15,7 +15,8 @@ gem 'devise'
 gem 'nokogiri'
 gem 'httparty'
 gem 'figaro'
-gem 'redis-objects'
+gem 'redic' # gem to connect ohm to redis
+gem 'ohm' # gem to use redis to store objects
 
 group :development, :test do
   gem 'byebug'
@@ -27,6 +28,7 @@ group :development, :test do
   gem 'pry' # debugging from console anywhere
   gem 'better_errors' # neat error pages
   gem 'binding_of_caller' # turns debugging at error page
+  gem 'annotate' # annotates the fields on the models to remove the need to remember the schema
 end
 
 group :production do
