@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: gifs
+#
+#  id         :integer          not null, primary key
+#  word       :string
+#  url        :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Gif < ActiveRecord::Base
   require 'uri'
   has_many :teams
