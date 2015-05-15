@@ -11,7 +11,6 @@
   </head>
   <body>
     <%= render partial: 'layouts/header' %>
-    <%= render partial: 'layouts/nprogress' %>
     <% unless user_signed_in? %>
       <%= render partial: 'layouts/login_overlay' %>
     <% end %>
