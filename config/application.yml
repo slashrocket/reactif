@@ -1,4 +1,5 @@
 development:
   SLACK_WEBHOOK_URL: https://hooks.slack.com/services/1234567890/1234567890
+  REDIS_URL: redis://127.0.0.1:6379
 production:
   SLACK_WEBHOOK_URL: https://hooks.slack.com/services/1234567890/1234567890

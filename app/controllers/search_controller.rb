@@ -40,7 +40,7 @@ class SearchController < ApplicationController
     responselink = "<" + image.url + "?" + Random.rand(500).to_s + "|" + " /reactif " + text + ">"
     responsechannel = "#" + channel
     store_last_gif_data @team.domain, channel, image.id
-    HTTParty.post(SLACK_WEBHOOK_URL,
+    asd = HTTParty.post(SLACK_WEBHOOK_URL,
     {
       body: {
         payload: {

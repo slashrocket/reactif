@@ -10,7 +10,7 @@ Output better gif responses to slack
 === environment variables
 
 * SLACK_WEBHOOK_URL = <your incoming webhook url>
-* ENV['REDIS_URL'] = <your redis url> (using this format: "redis://127.0.0.1:6379")
+* REDIS_URL = <your redis url> (using this format: "redis://127.0.0.1:6379")
 
 === dev testing
 
