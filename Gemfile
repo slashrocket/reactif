@@ -15,6 +15,7 @@ gem 'devise'
 gem 'nokogiri'
 gem 'httparty'
 gem 'figaro'
+gem 'redis-objects'
 
 group :development, :test do
   gem 'byebug'
