@@ -1,3 +1,7 @@
-<ul>
-  <%= image_tag(image) %>
-</ul>
+<div class="search_result col-md-3">
+  <%= link_to image do %>
+    <object data=<%= image %> type="image/gif">
+      <!-- replace with default not_found image -->
+    </object>
+  <% end %>
+</div>
