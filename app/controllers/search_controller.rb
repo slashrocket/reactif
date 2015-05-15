@@ -7,7 +7,7 @@ class SearchController < ApplicationController
   end
 
   def show
-    @found_images = Gif.getgif(params[:search][:query])
+    @found = Gif.getgif(params[:search][:query])
   end
 
   def slack
@@ -34,7 +34,7 @@ class SearchController < ApplicationController
   
 
 def post_gif_to_slack(image, text, channel, username)
-  responselink = " /reactif " + text + "    <" + image + "?" + Random.rand(500).to_s + "|" + image + ">"
+  responselink = "<" + image + "?" + Random.rand(500).to_s + "|" + " /reactif " + text + ">"
   responsechannel = "#" + channel
   HTTParty.post(SLACK_WEBHOOK_URL,
   {
