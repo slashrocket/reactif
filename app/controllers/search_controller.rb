@@ -30,7 +30,7 @@ class SearchController < ApplicationController
     found = Gif.getgif(query)
     random_image = found.sample
     @gif = Gif.find_by_url(found.sample)
-    @team.teamgifs << @gif
+    @team.gifs << @gif
     return @gif
   end
   
@@ -68,7 +68,7 @@ class SearchController < ApplicationController
 
   def vote(query, domain, channel)
     @team = Team.find_by_domain(domain)
-    @gif = @team.teamgifs.find(last_gif_id(domain, channel))
+    @gif = @team.gifs.find(last_gif_id(domain, channel))
     if query == 'upvote'
       @gif.upvote
     elsif query == 'downvote'
