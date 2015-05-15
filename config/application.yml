@@ -1,4 +1,4 @@
 development:
-  slack_webhook_url: https://hooks.slack.com/services/1234567890/1234567890
+  SLACK_WEBHOOK_URL: https://hooks.slack.com/services/1234567890/1234567890
 production:
-  slack_webhook_url: https://hooks.slack.com/services/1234567890/1234567890
+  SLACK_WEBHOOK_URL: https://hooks.slack.com/services/1234567890/1234567890
