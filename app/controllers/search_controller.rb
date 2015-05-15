@@ -16,12 +16,13 @@ class SearchController < ApplicationController
     username = params[:user_name]
     domain = params[:team_domain]
     @team = Team.find_by_domain(domain);
-    if @text == 'upvote' || @text == 'downvote'
+    if text == 'upvote' || text == 'downvote'
       vote text, domain, channel
     else
       found = find_gifs_for(text)
       found ? post_gif_to_slack(found, text, channel, username) : no_gifs
     end
+    render :nothing => true
   end
 
   private
@@ -49,7 +50,6 @@ class SearchController < ApplicationController
         }.to_json
       }
       })
-    render :nothing => true
   end
 
   def no_gifs
@@ -62,18 +62,21 @@ class SearchController < ApplicationController
     Lastgif.create team_domain: team_domain, channel: channel, gif_id: gif_id
   end
 
-  def last_gif_id(team_domain, channel)
+  def get_last_gif(team_domain, channel)
     last_gif = Lastgif.find(team_domain: team_domain, channel: channel).first
-    return last_gif.id
+    return last_gif
   end
 
   def vote(query, domain, channel)
     @team = Team.find_by_domain(domain)
-    @gif = @team.gifs.find(last_gif_id(domain, channel))
-    if query == 'upvote'
-      @gif.upvote
-    elsif query == 'downvote'
-      @gif.downvote
+    last_gif = get_last_gif domain, channel
+    unless last_gif == nil
+      @gif = @team.teamgifs.find(last_gif.gif_id)
+      if query == 'upvote'
+        @gif.upvote
+      elsif query == 'downvote'
+        @gif.downvote
+      end
     end
   end
 
