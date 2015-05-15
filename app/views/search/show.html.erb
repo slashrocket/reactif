@@ -3,14 +3,3 @@
 <% else %>
     <%= render partial: 'search/nothing_found' %>
 <% end %>
-<div class="row">
-  <% @found.each do |x| %>
-      <div class="search_result col-md-3">
-        <%= link_to x do %>
-          <object data=<%= x %> type="image/gif">
-            <%= image_tag x %>
-          </object>
-        <% end %>
-      </div>
-  <% end %>
-</div>

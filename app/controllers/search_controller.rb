@@ -7,7 +7,7 @@ class SearchController < ApplicationController
   end
 
   def show
-    @found = Gif.getgif(params[:search][:query])
+    @found_images = Gif.getgif(params[:search][:query])
   end
 
   def slack
