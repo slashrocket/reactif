@@ -1,0 +1,28 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Domain</td>
+                <td>Web Hook</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% unless @teams.empty? %>
+                <% @teams.each do |team| %>
+                    <%= render 'team_row', team: team %>
+                <% end %>
+            <% end %>
+            <tr>
+                <%= form_for @user.teams.build do |f| -%>
+                    <td ><%= f.text_field :name, class: 'form-control' %></td>
+                    <td><%= f.text_field :domain, class: 'form-control' %></td>
+                    <td><%= f.text_field :webhook, class: 'form-control' %></td>
+                    <td>
+                        <%= f.submit "Add", class: 'btn btn-success btn-sm' %>
+                    </td>
+                <% end %>
+            </tr>
+        </tbody>
+    </table>
+</div>
