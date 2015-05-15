@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:slack]
 
-  SLACK_WEBHOOK_URL = ENV['slack_webhook_url'] # config/application.yml
+  SLACK_WEBHOOK_URL = ENV['SLACK_WEBHOOK_URL'] # config/application.yml
 
   def index
   end
@@ -15,9 +15,8 @@ class SearchController < ApplicationController
     @channel = params[:channel_name]
     @username = params[:user_name]
     @domain = params[:team_domain]
-    find_gifs_for(@text, @domain, @channel, @username)
-    @random_image = @found_images.sample
-    @found_images.present? ? slack_response_gifs : no_gifs
+    found = find_gifs_for(@text, @domain, @channel, @username)
+    found ? post_gif_to_slack(found, @text, @channel, @username) : no_gifs
   end
 
   private
@@ -30,11 +29,7 @@ class SearchController < ApplicationController
     end
     found = Gif.getgif(query)
     random_image = found.sample
-    if found.present? ? post_gif_to_slack(random_image, query, channel, username) : no_gifs
-      post_gif_to_slack random_image, query, channel, username
-    else
-      return render json: "No gifs found"
-    end
+    return random_image
   end
   
 
@@ -51,11 +46,11 @@ def post_gif_to_slack(image, text, channel, username)
       }.to_json
     }
     })
-  return render :nothing => true
+  render :nothing => true
 end
 
 def no_gifs
-  return render json: 'No gifs found'
+  render json: 'No gifs found'
 end
 
 def vote(channel, id)
