@@ -1,14 +1,14 @@
-<h3>Welcome to your new gif home, <%= @user.name %>.</h3>
-<br/>
-<div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-        <%= form_for :search, url: show_search_path, method: :get do |f| %>
-        <div class="input-group">
-            <%= f.text_field :query, placeholder: 'Search for...', class: 'form-control' %>
-            <span class="input-group-btn">
-                <%= f.submit "Go!", class: "btn btn-default" %>
-            </span>
+<div class="row dashboard">
+    <div class="col-sm-2 sidebar">
+        <ul class="nav nav-sidebar">
+            <li><%= link_to 'Overview', dashboard_path %></li>
+        </ul>
+    </div>
+    <div class="col-sm-10">
+        <h1>Dashboard for <%= @user.name %></h1>
+        <hr>
+        <h2>Teams</h2>
+        <%= render 'team_table' %>
         </div>
-        <% end %>
     </div>
 </div>

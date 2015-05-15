@@ -1,0 +1,11 @@
+<tr id="team_<%= team.id %>">
+  <td><%= team.name %></td>
+  <td><%= team.domain %></td>
+  <td><%= team.webhook %></td>
+  <td>
+    <div class="btn-group btn-group-sm">
+      <%= link_to "Edit", "#", class: "btn btn-default" %>
+      <%= link_to "Delete", team_path(team), method: :delete, class: "btn btn-danger" %>
+    </div>
+  </td>
+</tr>
