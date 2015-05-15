@@ -48,9 +48,11 @@
         </ul>
         <div class="navbar-form navbar-right" role="search">
           <%= form_for :search, url: show_search_path, method: :get do |f| %>
-            <div class="form-group searchnav">
+            <div class="input-group searchnav">
               <%= f.text_field :query, placeholder: "Search for...", class: 'form-control' %>
-              <%= f.submit "Go", class: 'btn btn-default' %>
+                <div class="input-group-btn">
+                  <%= f.submit "Go", class: 'btn btn-default' %>
+                </div>
             </div>
           <% end %>
         </div>
