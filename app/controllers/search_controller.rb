@@ -57,7 +57,8 @@ class SearchController < ApplicationController
   end
 
   def store_last_gif_data(team_domain, channel, gif_id)
-    Lastgif.find(team_domain: team_domain, channel: channel).first.delete
+    last = Lastgif.find(team_domain: team_domain, channel: channel).first
+    last.delete unless last == nil 
     Lastgif.create team_domain: team_domain, channel: channel, gif_id: gif_id
   end
 
