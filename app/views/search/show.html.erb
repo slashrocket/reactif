@@ -1,5 +1,5 @@
-<% if @found_images.present? %>
-    <%= render partial: 'search/images', collection: @found_images, as: :image %>
+<% if @found.present? %>
+    <%= render partial: 'search/images', collection: @found, as: :image %>
 <% else %>
     <%= render partial: 'search/nothing_found' %>
 <% end %>
