@@ -13,12 +13,12 @@ class SearchController < ApplicationController
     channel = params[:channel_name]
     username = params[:user_name]
     domain = params[:team_domain]
-    @team = Team.find_by_domain(domain)
+    @team = Team.find_by_domain domain 
     if @team
       if text == 'upvote' || text == 'downvote'
-        vote text, domain, channel
+        vote text, domain, channel, username
       else
-        found = find_gifs_for(text)
+        found = find_gifs_for text
         found ? post_gif_to_slack(found, text, channel, username) : no_gifs
       end
     end
@@ -29,7 +29,6 @@ class SearchController < ApplicationController
 
   def find_gifs_for(query)
     found = Gif.getgif(query)
-    random_image = found.sample
     @gif = Gif.find_by_url(found.sample)
     @team.gifs << @gif
     return @gif
@@ -37,19 +36,9 @@ class SearchController < ApplicationController
   
 
   def post_gif_to_slack(image, text, channel, username)
-    responselink = "<" + image.url + "?" + Random.rand(500).to_s + "|" + " /reactif " + text + ">"
-    responsechannel = "#" + channel
     store_last_gif_data @team.domain, channel, image.id
-    asd = HTTParty.post(@team.webhook,
-    {
-      body: {
-        payload: {
-          username: username,
-          channel: responsechannel,
-          text: responselink
-        }.to_json
-      }
-      })
+    responselink = "<" + image.url + "?" + Random.rand(500).to_s + "|" + " /reactif " + text + ">"
+    post_to_slack @team.webhook, username, channel, responselink
   end
 
   def no_gifs
@@ -67,17 +56,33 @@ class SearchController < ApplicationController
     return last_gif
   end
 
-  def vote(query, domain, channel)
-    @team = Team.find_by_domain(domain)
+  def vote(query, domain, channel, username)
+    @team = Team.find_by_domain domain
     last_gif = get_last_gif domain, channel
     unless last_gif == nil
-      @gif = @team.teamgifs.find(last_gif.gif_id)
+      @gif = @team.teamgifs.find_by_gif_id(last_gif.gif_id)
       if query == 'upvote'
         @gif.upvote
       elsif query == 'downvote'
         @gif.downvote
       end
+      responselink = "The previous gif was " + query + "d, " + "total votes: " + @gif.votes.to_s
+      post_to_slack @team.webhook, username, channel, responselink
     end
+  end
+
+  def post_to_slack(webhook, username, channel, responselink)
+    responsechannel = "#" + channel
+    HTTParty.post(webhook,
+    {
+      body: {
+        payload: {
+          username: "Reactif",
+          channel: responsechannel,
+          text: responselink
+        }.to_json
+      }
+    })
   end
 
 end
