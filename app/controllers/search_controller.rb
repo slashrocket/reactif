@@ -80,7 +80,7 @@ class SearchController < ApplicationController
         @gif.downvote
       end
       responselink = "The previous gif was " + query + "d, " + "total votes: " + @gif.votes.to_s
-      post_to_slack @team.webhook, username, channel, responselink
+      post_to_slack @team.webhook, "Reactif", channel, responselink
     end
   end
 
@@ -90,7 +90,7 @@ class SearchController < ApplicationController
     {
       body: {
         payload: {
-          username: "Reactif",
+          username: username,
           channel: responsechannel,
           text: responselink
         }.to_json
