@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #  user_id    :integer
 #  domain     :string
+#  webhook    :string
 #
 
 require 'test_helper'

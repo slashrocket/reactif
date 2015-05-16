@@ -5,7 +5,7 @@
 #  id         :integer          not null, primary key
 #  gif_id     :integer
 #  team_id    :integer
-#  votes      :integer
+#  votes      :integer          default(25)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

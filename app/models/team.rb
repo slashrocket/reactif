@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #  user_id    :integer
 #  domain     :string
+#  webhook    :string
 #
 
 class Team < ActiveRecord::Base

@@ -1,8 +1,6 @@
 class SearchController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:slack]
 
-  SLACK_WEBHOOK_URL = ENV['SLACK_WEBHOOK_URL'] # config/application.yml
-
   def index
   end
 
@@ -15,12 +13,14 @@ class SearchController < ApplicationController
     channel = params[:channel_name]
     username = params[:user_name]
     domain = params[:team_domain]
-    @team = Team.find_by_domain(domain);
-    if text == 'upvote' || text == 'downvote'
-      vote text, domain, channel
-    else
-      found = find_gifs_for(text)
-      found ? post_gif_to_slack(found, text, channel, username) : no_gifs
+    @team = Team.find_by_domain(domain)
+    if @team
+      if text == 'upvote' || text == 'downvote'
+        vote text, domain, channel
+      else
+        found = find_gifs_for(text)
+        found ? post_gif_to_slack(found, text, channel, username) : no_gifs
+      end
     end
     render :nothing => true
   end
@@ -40,7 +40,7 @@ class SearchController < ApplicationController
     responselink = "<" + image.url + "?" + Random.rand(500).to_s + "|" + " /reactif " + text + ">"
     responsechannel = "#" + channel
     store_last_gif_data @team.domain, channel, image.id
-    asd = HTTParty.post(SLACK_WEBHOOK_URL,
+    asd = HTTParty.post(@team.webhook,
     {
       body: {
         payload: {
