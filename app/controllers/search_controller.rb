@@ -28,13 +28,29 @@ class SearchController < ApplicationController
   private
 
   def find_gifs_for(query)
-    found = Gif.getgif(query)
-    @gif = Gif.find_by_url(found.sample)
-    @team.gifs << @gif
+    @gifs = Gif.getgifs(query)
+    @team.gifs << @gifs.reject{|gif| @team.gifs.include?(gif)}
+    @gif = pick_random
     return @gif
   end
-  
 
+  # a pick raondom gif function that takes the votes into account
+  def pick_random
+    id_array = []
+    @gifs.each do |gif|
+      id_array << gif.id
+    end
+    @teamgifs = @team.teamgifs.where(gif_id: id_array )
+    @total_votes = @teamgifs.map(&:votes).inject(0, &:+)
+    @total = 0 # makes this variable aviable in the map
+    # hacky way to pair gif_ids with their total of votes as a %
+    range_pairs = @teamgifs.collect.map{|gif| [gif.id, @total = @total + gif.votes*100/@total_votes] }.to_h
+    @random_number = rand(0..100) #make the random number avaible to the select
+    @selected_id = range_pairs.select { |key, value| @random_number <= value }.keys.first
+    choosen_gif = @gifs.select{|gif| gif.id == @selected_id}
+    return choosen_gif
+  end
+  
   def post_gif_to_slack(image, text, channel, username)
     store_last_gif_data @team.domain, channel, image.id
     responselink = "<" + image.url + "?" + Random.rand(500).to_s + "|" + " /reactif " + text + ">"
