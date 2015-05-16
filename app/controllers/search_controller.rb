@@ -36,10 +36,7 @@ class SearchController < ApplicationController
 
   # a pick raondom gif function that takes the votes into account
   def pick_random
-    id_array = []
-    @gifs.each do |gif|
-      id_array << gif.id
-    end
+    id_array = @gifs.map(&:id)
     @teamgifs = @team.teamgifs.where(gif_id: id_array )
     @total_votes = @teamgifs.map(&:votes).inject(0, &:+)
     @total = 0 # makes this variable aviable in the map
