@@ -1,6 +1,6 @@
 <div class="search_result col-md-3">
-  <%= link_to image do %>
-    <object data=<%= image %> type="image/gif">
+  <%= link_to image.url do %>
+    <object data=<%= image.url %> type="image/gif">
       <!-- replace with default not_found image -->
     </object>
   <% end %>
