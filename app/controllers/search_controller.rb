@@ -11,7 +11,7 @@ class SearchController < ApplicationController
   def slack
     text, channel, username, domain = params[:text].downcase, params[:channel_name], params[:user_name], params[:team_domain]
     @team = Team.find_by_domain domain
-    return render json: 'Team not found' unless @team
+    unless @team.present? then return render json: 'Team not found' end
     if text == 'upvote' || text == 'downvote'
       vote text, domain, channel, username
     else
