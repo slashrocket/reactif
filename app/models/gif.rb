@@ -21,7 +21,7 @@ class Gif < ActiveRecord::Base
     return nil unless searchfor.present?
     encodedsearch = URI.encode(searchfor)
     url = "http://www.reactiongifs.com/?s=#{encodedsearch}&submit=Search"
-    doc = Nokogiri::HTML HTTParty.get(url, {timeout: 2}).body
+    doc = Nokogiri::HTML HTTParty.get(url, {timeout: 4}).body
     return nil unless doc.present?
     findgifs = doc.css('div.entry p a').map { |link| link['href'] }
     #save found gifs if they are new
