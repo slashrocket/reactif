@@ -11,11 +11,12 @@ class SearchController < ApplicationController
   def slack
     text, channel, username, domain = params[:text].downcase, params[:channel_name], params[:user_name], params[:team_domain]
     @team = Team.find_by_domain domain
-    unless @team.present? then return render json: 'Team not found' end
+    return render json: 'Team not found' unless @team
     if text == 'upvote' || text == 'downvote'
       vote text, domain, channel, username
     else
       found = find_gifs_for text
+      if found == "timeout" then return render json: 'Timeout searching for gifs' end
       found ? post_gif_to_slack(found, text, channel, username) : no_gifs
     end
     return render nothing: true
@@ -25,6 +26,7 @@ class SearchController < ApplicationController
 
   def find_gifs_for(query)
     @gifs = Gif.getgifs(query)
+    return "timeout" unless @gifs
     @team.gifs << @gifs.reject { |gif| @team.gifs.include?(gif) }
     @gif = pick_random
     @gif
