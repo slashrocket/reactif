@@ -14,6 +14,7 @@ class SearchController < ApplicationController
     return render json: 'Team not found' unless @team
     if text == 'upvote' || text == 'downvote'
       vote text, domain, channel, username
+      return render nothing: true
     else
       found = find_gifs_for text
       if found == "timeout"
