@@ -18,6 +18,10 @@ gem 'figaro'
 gem 'redic' # gem to connect ohm to redis
 gem 'ohm' # gem to use redis to store objects
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -29,8 +33,13 @@ group :development, :test do
   gem 'better_errors' # neat error pages
   gem 'binding_of_caller' # turns debugging at error page
   gem 'annotate' # annotates the fields on the models to remove the need to remember the schema
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'active_mocker'
+  gem 'vcr'
 end
 
-group :production do
-  gem 'pg'
+group :test do
+  gem 'webmock'
 end
