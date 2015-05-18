@@ -17,4 +17,5 @@ class Team < ActiveRecord::Base
   belongs_to :user
 
   validates :domain, presence: true
+  validates :webhook, uniqueness: {message: "webhook already in use"}
 end

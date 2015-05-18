@@ -3,8 +3,11 @@ class TeamsController < ApplicationController
 
   def create
     @team = current_user.teams.build(team_params)
-    if @team.save!
+    if @team.save
       flash[:notice] = 'Team added!'
+      redirect_to dashboard_path
+    else
+      flash[:alert] = 'Failed to add team'
       redirect_to dashboard_path
     end
   end
