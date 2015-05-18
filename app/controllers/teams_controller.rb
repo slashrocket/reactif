@@ -4,14 +4,14 @@ class TeamsController < ApplicationController
   def create
     @team = current_user.teams.build(team_params)
     if @team.save!
-      flash[:notice] = "Team added!"
+      flash[:notice] = 'Team added!'
       redirect_to dashboard_path
     end
   end
 
   def destroy
     current_user.teams.find(params[:id]).destroy
-    flash[:notice] = "Team deleted."
+    flash[:notice] = 'Team deleted.'
     redirect_to dashboard_path
   end
 
