@@ -11,14 +11,14 @@ class SearchController < ApplicationController
   def slack
     text, channel, username, domain = params[:text].downcase, params[:channel_name], params[:user_name], params[:team_domain]
     @team = Team.find_by_domain domain
-    return false unless @team
+    return render json: 'Team not found' unless @team
     if text == 'upvote' || text == 'downvote'
       vote text, domain, channel, username
     else
       found = find_gifs_for text
       found ? post_gif_to_slack(found, text, channel, username) : no_gifs
     end
-    render nothing: true
+    return render nothing: true
   end
 
   private
