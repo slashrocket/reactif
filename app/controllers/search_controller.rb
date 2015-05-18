@@ -18,13 +18,13 @@ class SearchController < ApplicationController
       found = find_gifs_for text
       if found == "timeout"
         return render json: 'Timeout searching for gifs'
-      elsif found
+      elsif found.present?
         post_gif_to_slack(found, text, channel, username)
+        return render nothing: true
       else
         return no_gifs
       end
     end
-    return render nothing: true
   end
 
   private
