@@ -3,7 +3,7 @@ module ReactionGIFS
 
   module ClassMethods
     def reaction_gifs_response(search_query)
-      Nokogiri::HTML(open(reaction_gifs_search_query(search_query)))
+      Nokogiri::HTML HTTParty.get(reaction_gifs_search_query(search_query), {timeout: 4}).body
     end
 
     def reaction_gifs_search_query(search_query)

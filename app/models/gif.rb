@@ -10,33 +10,39 @@
 #
 
 class Gif < ActiveRecord::Base
-  require 'uri'
+  include ReactionGIFS
+
   has_many :teams
   has_many :teamgifs
   
   validates :url, presence: true
-  #validates :word, presence: true
-  
-  def self.getgifs(searchfor)
-    return nil unless searchfor.present?
-    encodedsearch = URI.encode(searchfor)
-    url = "http://www.reactiongifs.com/?s=#{encodedsearch}&submit=Search"
-    doc = Nokogiri::HTML HTTParty.get(url, {timeout: 4}).body
-    return nil unless doc.present?
-    findgifs = doc.css('div.entry p a').map { |link| link['href'] }
-    #save found gifs if they are new
-    @gifs = []
-    findgifs[0..5].each do |x|
-      gif = Gif.find_by_url(x)
-      if gif.nil?
-          gif = Gif.new
-          gif.url = x
-          gif.word = searchfor
-          gif.save!
-      end
-      @gifs << gif
+  validates :word, presence: true
+
+  class << self
+    def getgifs(search_query)
+      return nil unless search_query.present?
+
+      @search_query = search_query
+      @encoded_search_query = encoded_search_query
+      save_gifs
     end
-    @gifs
+
+    def encoded_search_query
+      URI.encode(@search_query)
+    end
+
+    # Save found gifs if they are new
+    def save_gifs
+      gif_links.map do |url|
+        Gif.find_or_create_by(url: url, word: @search_query)
+      end
+    end
+
+    # You can add here another gif services
+    def gif_links
+      [
+          reaction_gif_links(@encoded_search_query)
+      ].flatten
+    end
   end
-  
 end
