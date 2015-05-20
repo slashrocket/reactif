@@ -25,9 +25,7 @@ class SearchController < ApplicationController
 
   def find_gifs_for(query)
     @gifs = Gif.getgifs(query)
-    if (@gifs.empty?) || (!@gifs.sample.instance_of? Gif)
-      return no_gifs 
-    end
+    return no_gifs if (@gifs.empty?) || (!@gifs.sample.instance_of? Gif)
     @team.gifs << @gifs.reject { |gif| @team.gifs.include?(gif) }
     @gif = pick_random
     @gif
