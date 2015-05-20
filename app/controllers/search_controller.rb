@@ -38,7 +38,7 @@ class SearchController < ApplicationController
     @total_votes = @teamgifs.map(&:votes).inject(0, &:+)
     @total = 0 # makes this variable aviable in the map
     # hacky way to pair gif_ids with their total of votes as a %
-    range_pairs = @teamgifs.collect.map{ |gif| [gif.id, @total += gif.votes * 100 / @total_votes] }.to_h
+    range_pairs = @teamgifs.collect.map{ |gif| [gif.gif_id, @total += gif.votes * 100 / @total_votes] }.to_h
     @random_number = rand(0..100) # make the random number avaible to the select
     @selected_id = range_pairs.select { |_key, value| @random_number <= value }.keys.first
     choosen_gif = @gifs.select{ |gif| gif.id == @selected_id }.first
