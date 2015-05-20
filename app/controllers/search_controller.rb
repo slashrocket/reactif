@@ -16,6 +16,7 @@ class SearchController < ApplicationController
       vote text, domain, channel, username
     else
       found = find_gifs_for text
+      return no_gifs unless found
       post_gif_to_slack(found, text, channel, username)
     end
     return render nothing: true
@@ -25,7 +26,7 @@ class SearchController < ApplicationController
 
   def find_gifs_for(query)
     @gifs = Gif.getgifs(query)
-    return no_gifs if (@gifs.empty?) || (!@gifs.sample.instance_of? Gif)
+    return false if (@gifs.empty?) || (!@gifs.sample.instance_of? Gif)
     @team.gifs << @gifs.reject { |gif| @team.gifs.include?(gif) }
     @gif = pick_random
     @gif
