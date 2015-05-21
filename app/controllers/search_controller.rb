@@ -67,18 +67,29 @@ class SearchController < ApplicationController
     last_gif
   end
 
-  def vote(query, domain, channel, _username)
+  def vote(query, domain, channel, username)
     @team = Team.find_by_domain domain
     last_gif = get_last_gif domain, channel
     return false if last_gif.nil? 
     @gif = @team.teamgifs.find_by_gif_id(last_gif.gif_id)
+    return false if arleady_voted? domain, channel, username, @gif.id
     if query == 'upvote'
       @gif.upvote
     elsif query == 'downvote'
       @gif.downvote
     end
+    Gifvotes.create team_domain: domain, channel: channel, username: username, gif_id: @gif.id, expiration: Time.now + 1.week
     responselink = 'The previous gif was ' + query + 'd, ' + 'total votes: ' + @gif.votes.to_s
     post_to_slack @team.webhook, 'Reactif', channel, responselink
+  end
+
+  def arleady_voted?(domain, channel, username, gif_id)
+    vote = Gifvotes.find(team_domain: domain, channel: channel, username: username, gif_id: gif_id).first
+    if vote.present? && vote.expiration <= Time.now
+      vote.delete
+      vote = nil
+    end
+    return !!vote
   end
 
   def post_to_slack(webhook, username, channel, responselink)
