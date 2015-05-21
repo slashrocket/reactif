@@ -2,13 +2,12 @@
     <div class="col-sm-2 sidebar">
         <ul class="nav nav-sidebar">
             <li><%= link_to 'Overview', dashboard_path %></li>
+            <li><%= link_to 'Settings', dashboard_settings_path %></li>
         </ul>
     </div>
     <div class="col-sm-10">
-        <h1>Dashboard for <%= @user.name %></h1>
-        <hr>
-        <h2>Teams</h2>
-        <%= render 'team_table' %>
-        </div>
+        <% if @teamcount == 0 %>
+            <h3 align="center">You are not a member of a team, <%= link_to dashboard_settings_path do %>join a team?<% end %></h3>
+        <% end %>
     </div>
 </div>

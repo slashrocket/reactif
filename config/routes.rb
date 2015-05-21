@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   match 'search/found/', to: 'search#show', via: 'get', as: 'show_search'
   match 'search/slack/', to: 'search#slack', via: [:get, :post], as: 'slack_search'
   match 'dashboard', to: 'dashboard#index', via: 'get', as: 'dashboard'
+  match 'dashboard/settings', to: 'dashboard#settings', via: 'get', as: 'dashboard_settings'
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
   resources :teams, only: [:create, :destroy, :update]
 end
