@@ -20,7 +20,7 @@ class SearchController < ApplicationController
     else
       post_gif(query, team, channel, username)
     end
-    return render nothing: true
+
   end
 
   private

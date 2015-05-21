@@ -1,7 +1,7 @@
 module SlackHelper
   def post_gif(query, team, channel, username)
     found_gif = find_gifs_for(query, team)
-    return no_gifs unless found_gif.present?
+    return no_gifs render nothing: true unless found_gif.present?
     response_link = "<#{found_gif.url}?#{rand(500)}| /reactif #{text}>"
 
     store_last_gif_data(team, channel, found_gif.id)
@@ -10,7 +10,7 @@ module SlackHelper
 
   def vote_gif(query, team, channel)
     last_gif = get_last_gif(team, channel)
-    return no_gifs unless last_gif.present?
+    return no_gifs render nothing: true unless last_gif.present?
     gif = team.teamgifs.find_by(gif_id: last_gif.gif_id)
     query == 'upvote' ? gif.upvote! : gif.downvote!
 
