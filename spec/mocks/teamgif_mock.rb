@@ -167,12 +167,12 @@ class TeamgifMock < ActiveMocker::Mock::Base
   ##################################
 
 
-  def upvote
-    call_mock_method :upvote, Kernel.caller
+  def upvote!
+    call_mock_method :upvote!, Kernel.caller
   end
 
-  def downvote
-    call_mock_method :downvote, Kernel.caller
+  def downvote!
+    call_mock_method :downvote!, Kernel.caller
   end
 
 end
