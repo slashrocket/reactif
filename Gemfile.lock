@@ -96,6 +96,7 @@ GEM
       equalizer (~> 0.0.9)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
+    database_cleaner (1.4.1)
     debug_inspector (0.0.2)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
@@ -249,6 +250,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
+    timecop (0.7.3)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -294,6 +296,7 @@ DEPENDENCIES
   bullet
   byebug
   coffee-rails
+  database_cleaner
   devise
   factory_girl_rails
   faker
@@ -315,6 +318,7 @@ DEPENDENCIES
   sdoc
   spring
   sqlite3
+  timecop
   turbolinks
   uglifier
   vcr

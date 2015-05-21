@@ -1,0 +1,195 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.reactiongifs.com/?s=asdadas&submit=Search
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 21 May 2015 14:30:40 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=da5bfd5dd309a2a6d88f775d6befa1d3f1432218639; expires=Fri, 20-May-16
+        14:30:39 GMT; path=/; domain=.reactiongifs.com; HttpOnly
+      X-Powered-By:
+      - PHP/5.4.40
+      X-Pingback:
+      - http://www.reactiongifs.com/xmlrpc.php
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - private, max-age=360, must-revalidate
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 1ea0fb02976e0c23-AMS
+    body:
+      encoding: ASCII-8BIT
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\">\n<head profile=\"http://gmpg.org/xfn/11\">\n<title>You
+        searched for asdadas - Reaction GIFs</title>\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=UTF-8\"/>\n<script type=\"text/javascript\">\n//<![CDATA[\ntry{if
+        (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:\"cf\",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:\"/cdn-cgi/nexp/dok3v=1613a3a185/\"},atok:\"345c2e382d58f4d6dee28516f74a2686\",petok:\"33518a9ec2738a1f4e2504db0e28de3cbef482d6-1432218640-1800\",zone:\"reactiongifs.com\",rocket:\"0\",apps:{\"abetterbrowser\":{\"ie\":\"7\"}}}];!function(a,b){a=document.createElement(\"script\"),b=document.getElementsByTagName(\"script\")[0],a.async=!0,a.src=\"//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=7e13c32551/cloudflare.min.js\",b.parentNode.insertBefore(a,b)}()}}catch(e){};\n//]]>\n</script>\n<link
+        rel=\"stylesheet\" type=\"text/css\" href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/style.css\"
+        media=\"screen\"/>\n<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS
+        2.0\" href=\"http://www.reactiongifs.com/feed/\"/>\n<link rel=\"pingback\"
+        href=\"http://www.reactiongifs.com/xmlrpc.php\"/>\n \n<meta name=\"robots\"
+        content=\"noindex,follow\"/>\n<link rel=\"canonical\" href=\"http://www.reactiongifs.com/search/asdadas/\"/>\n<meta
+        property=\"og:locale\" content=\"en_US\"/>\n<meta property=\"og:type\" content=\"object\"/>\n<meta
+        property=\"og:title\" content=\"You searched for asdadas - Reaction GIFs\"/>\n<meta
+        property=\"og:url\" content=\"http://www.reactiongifs.com/search/asdadas/\"/>\n<meta
+        property=\"og:site_name\" content=\"Reaction GIFs\"/>\n<meta property=\"article:publisher\"
+        content=\"http://www.facebook.com/reactiongif\"/>\n<meta property=\"fb:admins\"
+        content=\"502908366\"/>\n<script type='application/ld+json'>{\"@context\":\"http:\\/\\/schema.org\",\"@type\":\"WebSite\",\"url\":\"http:\\/\\/www.reactiongifs.com\\/\",\"name\":\"Reaction
+        GIFs\"}</script>\n \n<link rel=\"alternate\" type=\"application/rss+xml\"
+        title=\"Reaction GIFs &raquo; Search Results for &#8220;asdadas&#8221; Feed\"
+        href=\"http://www.reactiongifs.com/search/asdadas/feed/rss2/\"/>\n<link rel='stylesheet'
+        id='post-plugin-css' href='http://www.reactiongifs.com/wp-content/plugins/post/post-plugin.css?ver=1'
+        type='text/css' media='all'/>\n \n<script type=\"text/javascript\">\n\n\tvar
+        _gaq = _gaq || [];\n\t_gaq.push(['_setAccount', 'UA-89466-14']);\n\t_gaq.push(['_gat._forceSSL']);\n\t_gaq.push(['_trackPageview','/?s=no-results:asdadas&cat=no-results']);\n\n\t(function
+        () {\n\t\tvar ga = document.createElement('script');\n\t\tga.type = 'text/javascript';\n\t\tga.async
+        = true;\n\t\tga.src = ('https:' == document.location.protocol ? 'https://ssl'
+        : 'http://www') + '.google-analytics.com/ga.js';\n\t\tvar s = document.getElementsByTagName('script')[0];\n\t\ts.parentNode.insertBefore(ga,
+        s);\n\t})();\n\n</script>\n \n<script type='text/javascript' src='http://www.reactiongifs.com/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>\n<script
+        type='text/javascript' src='http://www.reactiongifs.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>\n<script
+        type='text/javascript' src='http://www.reactiongifs.com/wp-content/themes/skeptical/includes/js/superfish.js?ver=4.1.5'></script>\n<script
+        type='text/javascript' src='http://www.reactiongifs.com/wp-content/themes/skeptical/includes/js/general.js?ver=4.1.5'></script>\n<link
+        rel=\"EditURI\" type=\"application/rsd+xml\" title=\"RSD\" href=\"http://www.reactiongifs.com/xmlrpc.php?rsd\"/>\n<link
+        rel=\"wlwmanifest\" type=\"application/wlwmanifest+xml\" href=\"http://www.reactiongifs.com/wp-includes/wlwmanifest.xml\"/>\n<meta
+        name=\"generator\" content=\"WordPress 4.1.5\"/>\n \n<script type=\"text/javascript\">\n(function
+        ()\n{\n    var s = document.createElement('script');\n    s.type = 'text/javascript';\n
+        \   s.async = true;\n    s.src = ('https:' == document.location.protocol ?
+        'https://s' : 'http://i') + '.po.st/share/script/post-widget.js#publisherKey=fbaju90ku38i5tkaq0au&retina=true';\n
+        \   var x = document.getElementsByTagName('script')[0];\n    x.parentNode.insertBefore(s,
+        x);\n})();\n</script>\n \n<meta name=\"generator\" content=\"Skeptical 1.0.4\"/>\n<meta
+        name=\"generator\" content=\"WooFramework 6.0.3\"/>\n<!--[if IE 6]>\n<script
+        type=\"text/javascript\" src=\"http://www.reactiongifs.com/wp-content/themes/skeptical/includes/js/pngfix.js\"></script>\n<script
+        type=\"text/javascript\" src=\"http://www.reactiongifs.com/wp-content/themes/skeptical/includes/js/menu.js\"></script>\n<link
+        rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/css/ie6.css\"
+        />\n<![endif]-->\n<!--[if IE 7]>\n<link rel=\"stylesheet\" type=\"text/css\"
+        media=\"all\" href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/css/ie7.css\"
+        />\n<![endif]-->\n<!--[if IE 8]>\n<link rel=\"stylesheet\" type=\"text/css\"
+        media=\"all\" href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/css/ie8.css\"
+        />\n<![endif]-->\n \n<style type=\"text/css\">a:link,a:visited{color:#697e09}</style>\n
+        \n<link href=\"http://fonts.googleapis.com/css?family=Open+Sans%3A300%2C%3A300italic%2C%3Aregular%2C%3Aitalic%2C%3A600%2C%3A600italic%2C%3A700%2C%3A700italic%2C%3A800%2C%3A800italic|Ubuntu%3A300%2C%3A300italic%2C%3Aregular%2C%3Aitalic%2C%3A500%2C%3A500italic%2C%3A700%2C%3A700italic\"
+        rel=\"stylesheet\" type=\"text/css\"/>\n \n<style type=\"text/css\">body{font:normal
+        12px/1.5em Open Sans;color:#55555;}#navigation,#navigation .nav a{font:normal
+        12px/1em Open Sans;color:#ffffff;}.post .title,.post .title a:link,.post .title
+        a:visited{font:bold 28px/1em &quot;HelveticaNeue&quot;, Helvetica, sans-serif;color:#222222;
+        }#main .post .post-meta,#main .post .post-meta a,.post .post-meta .post-date{font:normal
+        14px/1em Ubuntu;color:#ffffff;}.entry,.entry p{font:normal 16px/1.5em Open
+        Sans;color:#000000;}h1,h2,h3,h4,h5,h6{font-family:Open Sans}.widget h3{font:bold
+        18px/1em Open Sans;color:#333333;}</style>\n \n<link href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/styles/blue.css\"
+        rel=\"stylesheet\" type=\"text/css\"/>\n \n<link rel=\"shortcut icon\" href=\"http://www.reactiongifs.com/wp-content/uploads/2012/11/reactiongifs.com_.ico\"/>\n
+        \n<style type=\"text/css\">.post-shortlink{font-size:12px;font-family:'' Helvetica
+        Neue '',Helvetica,Arial,sans-serif;font-weight:700;background-color:#fffff;border:2px
+        solid #dbdbdb;padding:5px;-webkit-border-radius:7px;-moz-border-radius:7px;border-radius:7px;color:#2D4567}.post-shortlink2{font-size:10px;font-family:''
+        Helvetica Neue '',Helvetica,Arial,sans-serif;font-weight:400;background-color:#333;border:1px
+        solid #666;padding:1px;color:#999}</style>\n \n<link href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/functions/css/shortcodes.css\"
+        rel=\"stylesheet\" type=\"text/css\"/>\n \n<link href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/custom.css\"
+        rel=\"stylesheet\" type=\"text/css\"/>\n</head>\n<body class=\"search search-no-results
+        unknown alt-style-blue\">\n<div id=\"wrapper\">\n<div id=\"header\">\n<div
+        class=\"col-full\">\n<div id=\"logo\">\n<a href=\"http://www.reactiongifs.com\"
+        title=\"Say it with a GIF!\">\n<img src=\"http://www.reactiongifs.com/wp-content/uploads/2012/12/reaction-gifs4.png\"
+        alt=\"Reaction GIFs\"/>\n</a>\n<h1 class=\"site-title\"><a href=\"http://www.reactiongifs.com\">Reaction
+        GIFs</a></h1>\n<span class=\"site-description\">Say it with a GIF!</span>\n</div>
+        \n<div id=\"navigation\">\n<ul id=\"main-nav\" class=\"nav fl\">\n<li class=\"page_item\"><a
+        href=\"http://www.reactiongifs.com\">Home</a></li>\n<li class=\"page_item
+        page-item-2\"><a href=\"http://www.reactiongifs.com/about/\">ABOUT</a></li>\n<li
+        class=\"page_item page-item-40 page_item_has_children\"><a href=\"http://www.reactiongifs.com/galleries/\">GALLERIES</a>\n<ul
+        class='children'>\n<li class=\"page_item page-item-62\"><a href=\"http://www.reactiongifs.com/galleries/yes/\">Yes</a></li>\n<li
+        class=\"page_item page-item-88\"><a href=\"http://www.reactiongifs.com/galleries/no/\">No</a></li>\n<li
+        class=\"page_item page-item-292\"><a href=\"http://www.reactiongifs.com/galleries/omg/\">OMG!</a></li>\n<li
+        class=\"page_item page-item-366\"><a href=\"http://www.reactiongifs.com/galleries/dance-party/\">Dance
+        Party</a></li>\n<li class=\"page_item page-item-912\"><a href=\"http://www.reactiongifs.com/galleries/popcorn-gifs/\">Popcorn
+        GIFs</a></li>\n<li class=\"page_item page-item-4115\"><a href=\"http://www.reactiongifs.com/galleries/lol/\">LOL</a></li>\n<li
+        class=\"page_item page-item-4877\"><a href=\"http://www.reactiongifs.com/galleries/love/\">Love</a></li>\n<li
+        class=\"page_item page-item-9444\"><a href=\"http://www.reactiongifs.com/galleries/wtf/\">WTF?</a></li>\n</ul>\n</li>\n<li
+        class=\"page_item page-item-1366\"><a href=\"http://www.reactiongifs.com/tags/\">TAGS</a></li>\n<li
+        class=\"page_item page-item-14837\"><a href=\"http://www.reactiongifs.com/contact/\">CONTACT</a></li>\n</ul>
+        \n<ul class=\"rss fr\">\n<li class=\"sub-rss\"><a href=\"http://www.reactiongifs.com/feed/\">Subscribe
+        to RSS</a></li>\n</ul>\n</div> \n</div> \n</div>\n<div style=\"width: 730px;
+        height: 90px; margin-top:25px; margin-right:auto; margin-bottom:25px; margin-left:auto;\"><script
+        async=\"\" src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>\n
+        \n<ins class=\"adsbygoogle\" style=\"display:inline-block;width:728px;height:90px\"
+        data-ad-client=\"ca-pub-8726219848488817\" data-ad-slot=\"3853180816\"></ins>\n<script>\r\n(adsbygoogle
+        = window.adsbygoogle || []).push({});\r\n</script></div>\n \n<div id=\"content\"
+        class=\"col-full\">\n<div id=\"main\" class=\"col-left\">\n<div class=\"post
+        not-found\">\n<p style=\"width:468px;\">It looks like your search term isn't
+        in our database. The good news is, we will probably add it in the future.
+        Frequently searched for terms are added to the tag database regularly. Care
+        to search again?</p>\n<br/> <script type=\"text/javascript\"><!--\r\ngoogle_ad_client
+        = \"ca-pub-8726219848488817\";\r\n/* 404 footer */\r\ngoogle_ad_slot = \"1598538014\";\r\ngoogle_ad_width
+        = 468;\r\ngoogle_ad_height = 60;\r\n//-->\r\n</script>\n<script type=\"text/javascript\"
+        src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">\r\n</script>\n</div>
+        \n</div> \n<div id=\"sidebar\" class=\"col-right\">\n<div class=\"primary\">\n<div
+        id=\"text-2\" class=\"widget widget_text\"><h3>I am feeling . . .</h3> <div
+        class=\"textwidget\"><form><div class=\"styled-select\">\n<select onChange=\"if(this.selectedIndex!=0)\r\nself.location=this.options[this.selectedIndex].value\">\n<option
+        selected=\"selected\">???\n<option value=\"http://www.reactiongifs.com/tag/affectionate/\">Affectionate\n<option
+        value=\"http://www.reactiongifs.com/tag/amused/\">Amused\n<option value=\"http://www.reactiongifs.com/tag/angry/\">Angry\n<option
+        value=\"http://www.reactiongifs.com/tag/aroused/\">Aroused\n<option value=\"http://www.reactiongifs.com/tag/bored/\">Bored\n<option
+        value=\"http://www.reactiongifs.com/tag/fail/\">Clumsy\n<option value=\"http://www.reactiongifs.com/tag/wtf/\">Confused\n<option
+        value=\"http://www.reactiongifs.com/tag/dance/\">Dancey\n<option value=\"http://www.reactiongifs.com/tag/disappointed\">Disappointed\n<option
+        value=\"http://www.reactiongifs.com/tag/disgust/\">Disgusted\n<option value=\"http://www.reactiongifs.com/tag/do-not-want/\">Disinterested\n<option
+        value=\"http://www.reactiongifs.com/tag/embarrassed/\">Embarrassed\n<option
+        value=\"http://www.reactiongifs.com/tag/excited/\">Excited\n<option value=\"http://www.reactiongifs.com/tag/frustrated/\">Frustrated\n<option
+        value=\"http://www.reactiongifs.com/tag/happy/\">Happy\n<option value=\"http://www.reactiongifs.com/tag/meh/\">Indifferent\n<option
+        value=\"http://www.reactiongifs.com/tag/interested/\">Interested\n<option
+        value=\"http://www.reactiongifs.com/tag/lazy/\">Lazy\n<option value=\"http://www.reactiongifs.com/tag/do-want/\">Longing\n<option
+        value=\"http://www.reactiongifs.com/tag/proud/\">Proud\n<option value=\"http://www.reactiongifs.com/tag/sad/\">Sad\n<option
+        value=\"http://www.reactiongifs.com/tag/satisfied/\">Satisfied\n<option value=\"http://www.reactiongifs.com/tag/scared/\">Scared\n<option
+        value=\"http://www.reactiongifs.com/tag/shocked/\">Shocked\n<option value=\"http://www.reactiongifs.com/tag/skeptical/\">Skeptical\n<option
+        value=\"http://www.reactiongifs.com/tag/sleepy/\">Sleepy\n<option value=\"http://www.reactiongifs.com/tag/surprised,/\">Surprised\n<option
+        value=\"http://www.reactiongifs.com/tag/wild/\">Wild\n</select>\n</div>\n</form></div>\n</div><div
+        id=\"text-3\" class=\"widget widget_text\"><h3>My answer is . . .</h3> <div
+        class=\"textwidget\"><form><div class=\"styled-select\">\n<select onChange=\"if(this.selectedIndex!=0)\r\nself.location=this.options[this.selectedIndex].value\">\n<option
+        selected=\"selected\">???\n<option value=\"http://www.reactiongifs.com/tag/hell-yes/\">Hell
+        Yes!\n<option value=\"http://www.reactiongifs.com/tag/yes/\">Yes\n<option
+        value=\"http://www.reactiongifs.com/tag/unsure/\">Undecided\n<option value=\"http://www.reactiongifs.com/tag/no/\">No\n<option
+        value=\"http://www.reactiongifs.com/tag/hell-no/\">Hell No!\n</select>\n</div>\n</form></div>\n</div>
+        <div id=\"woo_search-4\" class=\"widget widget_woo_search\"> <h3>Search</h3>
+        <div class=\"search_main widget\">\n<form method=\"get\" class=\"searchform\"
+        action=\"http://www.reactiongifs.com/\">\n<input type=\"text\" class=\"field
+        s\" name=\"s\" value=\"Search...\" onfocus=\"if (this.value == 'Search...')
+        {this.value = '';}\" onblur=\"if (this.value == '') {this.value = 'Search...';}\"/>\n<input
+        type=\"submit\" class=\"submit button\" name=\"submit\" value=\"Search\"/>\n</form>\n<div
+        class=\"fix\"></div>\n</div> </div>\n<div class=\"adspace-widget widget\">\n<script
+        type=\"text/javascript\" src=\"http://ap.lijit.com/www/delivery/fpi.js?z=278844&u=reactiongifs&width=300&height=250\"></script>\n</div>\n</div>\n</div>
+        \n</div> \n<div id=\"footer-widgets\">\n<div class=\"col-full\">\n<div class=\"block\">\n<div
+        class=\"adspace-widget widget\">\n<div style=\"margin-left: 125px;\">\n<script
+        type=\"text/javascript\" src=\"http://ap.lijit.com/www/delivery/fpi.js?z=278842&u=reactiongifs&width=728&height=90\"></script>\n</div>\n</div>
+        </div>\n<div class=\"block\">\n</div>\n<div class=\"block\">\n</div>\n<div
+        class=\"block last\">\n</div>\n<div class=\"fix\"></div>\n</div>\n</div> \n<div
+        id=\"footer\">\n<div class=\"footer-inside\">\n<div id=\"copyright\" class=\"col-left\">\n<p>&copy;
+        2015 Reaction GIFs. All Rights Reserved. | <a href=\"http://www.pichacks.com\">Make
+        a Funny Face</a> | <a href=\"http://www.zentips.org\">Zen Tips</a> | <a href=\"http://www.raddudes.com\">Rad
+        Dudes</a> | <a href=\"http://www.hungrytrees.com\">Hungry Trees</a> | <a href=\"http://www.cutecatgifs.com\">Cute
+        Cat GIFs</a></p>\n</div>\n<div id=\"credit\" class=\"col-right\">\n<p>\n \n</p>\n</div>\n<div
+        class=\"fix\"></div>\n</div>\n</div> \n</div> \n  <script type=\"text/javascript\">\r\n\r\n
+        \ var _gaq = _gaq || [];\r\n  _gaq.push(['_setAccount', 'UA-89466-14']);\r\n
+        \ _gaq.push(['_trackPageview']);\r\n\r\n  (function() {\r\n    var ga = document.createElement('script');
+        ga.type = 'text/javascript'; ga.async = true;\r\n    ga.src = ('https:' ==
+        document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\r\n
+        \   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga,
+        s);\r\n  })();\r\n\r\n</script>\n</body>\n</html>"
+    http_version: 
+  recorded_at: Thu, 21 May 2015 14:30:40 GMT
+recorded_with: VCR 2.9.3

@@ -36,10 +36,12 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'active_mocker'
-  gem 'vcr'
+  gem 'timecop'
 end
 
 group :test do
+  gem 'active_mocker'
+  gem 'database_cleaner'
   gem 'webmock'
+  gem 'vcr'
 end
