@@ -1,4 +1,6 @@
 class SearchController < ApplicationController
+  include SlackHelper
+
   skip_before_filter :verify_authenticity_token, only: [:slack]
 
   def index
@@ -9,90 +11,59 @@ class SearchController < ApplicationController
   end
 
   def slack
-    text, channel, username, domain = params[:text].downcase, params[:channel_name], params[:user_name], params[:team_domain]
-    @team = Team.find_by_domain domain
-    return render json: 'Team not found' unless @team
+    query, channel, username, domain = params[:text].downcase, params[:channel_name], params[:user_name], params[:team_domain]
+    team = Team.find_by(domain: domain)
+    return no_team unless team
+
     if !!(text =~ /^(upvote|downvote)$/)
-      vote text, domain, channel, username
+      vote_gif(query, team, channel)
     else
-      found = find_gifs_for text
-      return no_gifs unless found
-      post_gif_to_slack(found, text, channel, username)
+      post_gif(query, team, channel, username)
     end
     return render nothing: true
   end
 
   private
 
-  def find_gifs_for(query)
-    @gifs = Gif.getgifs(query)
-    return false if (@gifs.empty?) || (!@gifs.sample.instance_of? Gif)
-    @team.gifs << @gifs.reject { |gif| @team.gifs.include?(gif) }
-    @gif = pick_random
-    @gif
+  def find_gifs_for(query, team)
+    gifs = Gif.getgifs(query)
+    return false if gifs.present?
+    team.gifs << gifs.reject { |gif| team.gifs.include?(gif) }
+
+    pick_random(team, gifs)
   end
 
-  # a pick raondom gif function that takes the votes into account
-  def pick_random
-    id_array = @gifs.map(&:id)
-    @teamgifs = @team.teamgifs.where(gif_id: id_array )
-    @total_votes = @teamgifs.map(&:votes).inject(0, &:+)
-    @total = 0 # makes this variable aviable in the map
-    # hacky way to pair gif_ids with their total of votes as a %
-    range_pairs = @teamgifs.collect.map{ |gif| [gif.gif_id, @total += gif.votes * 100 / @total_votes] }.to_h
-    @random_number = rand(0..100) # make the random number avaible to the select
-    @selected_id = range_pairs.select { |_key, value| @random_number <= value }.keys.first
-    choosen_gif = @gifs.select{ |gif| gif.id == @selected_id }.first
-    choosen_gif
+  # a pick random gif function that takes the votes into account
+  def pick_random(team, gifs)
+    team_gifs = team.teamgifs.where(gif_id: gifs.map(&:id))
+    total_votes = team_gifs.pluck(:votes).sum(&:to_i)
+
+    gifs.detect { |gif| gif.id == ranged_pairs(team_gifs, total_votes) }
   end
-  
-  def post_gif_to_slack(image, text, channel, username)
-    store_last_gif_data @team.domain, channel, image.id
-    responselink = '<' + image.url + '?' + Random.rand(500).to_s + '|' + ' /reactif ' + text + '>'
-    post_to_slack @team.webhook, username, channel, responselink
+
+  def ranged_pairs(team_gifs, total_votes)
+    total = 0
+
+    team_gifs.map { |gif| [gif.gif_id, total += gif.votes * 100 / total_votes] }
+             .to_h
+             .select { |_key, value| rand(100) <= value }
+             .keys.first
+  end
+
+  def store_last_gif_data(team, channel, gif_id)
+    get_last_gif(team.domain, channel).try(:delete)
+    Lastgif.create(team_domain: team.domain, channel: channel, gif_id: gif_id)
+  end
+
+  def get_last_gif(team, channel)
+    Lastgif.find_by(team_domain: team.domain, channel: channel)
   end
 
   def no_gifs
-    render json: 'No gifs found'
+    render json: 'No gifs found :('
   end
 
-  def store_last_gif_data(team_domain, channel, gif_id)
-    last = Lastgif.find(team_domain: team_domain, channel: channel).first
-    last.delete unless last.nil? 
-    Lastgif.create team_domain: team_domain, channel: channel, gif_id: gif_id
+  def no_team
+    render json: 'Team not found :('
   end
-
-  def get_last_gif(team_domain, channel)
-    last_gif = Lastgif.find(team_domain: team_domain, channel: channel).first
-    last_gif
-  end
-
-  def vote(query, domain, channel, _username)
-    @team = Team.find_by_domain domain
-    last_gif = get_last_gif domain, channel
-    return false if last_gif.nil? 
-    @gif = @team.teamgifs.find_by_gif_id(last_gif.gif_id)
-    if query == 'upvote'
-      @gif.upvote
-    elsif query == 'downvote'
-      @gif.downvote
-    end
-    responselink = 'The previous gif was ' + query + 'd, ' + 'total votes: ' + @gif.votes.to_s
-    post_to_slack @team.webhook, 'Reactif', channel, responselink
-  end
-
-  def post_to_slack(webhook, username, channel, responselink)
-    responsechannel = '#' + channel
-    HTTParty.post(webhook,
-    {
-      body: {
-        payload: {
-          username: username,
-          channel: responsechannel,
-          text: responselink
-        }.to_json
-      }
-    })
-  end
-
 end
