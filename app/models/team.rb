@@ -13,9 +13,9 @@
 
 class Team < ActiveRecord::Base
   has_many :teamgifs
-  has_many :gifs, :through => :teamgifs
+  has_many :gifs, through: :teamgifs
   belongs_to :user
 
   validates :domain, presence: true
-  validates :webhook, uniqueness: {message: "webhook already in use"}
+  validates :webhook, uniqueness: { message: 'webhook already in use' }
 end
