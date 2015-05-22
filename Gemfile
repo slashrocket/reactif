@@ -44,4 +44,5 @@ group :test do
   gem 'database_cleaner'
   gem 'webmock'
   gem 'vcr'
+  gem 'fuubar'
 end
