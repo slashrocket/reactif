@@ -14,7 +14,7 @@ class Gif < ActiveRecord::Base
 
   has_many :teams
   has_many :teamgifs
-  
+
   validates :url, presence: true
   validates :word, presence: true
 
