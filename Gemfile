@@ -37,6 +37,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'timecop'
+  gem 'regressor', git: 'https://github.com/ndea/regressor.git', branch: 'master'
+  gem 'shoulda-matchers'
 end
 
 group :test do
