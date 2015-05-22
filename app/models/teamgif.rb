@@ -15,10 +15,16 @@ class Teamgif < ActiveRecord::Base
   belongs_to :team
 
   def upvote
-    self.votes += 1 && self.save! unless votes == 100
+    unless votes == 100
+      self.votes += 1 
+      self.save!
+    end
   end
 
   def downvote
-    self.votes -= 1 && self.save! unless votes == 0
+    unless votes == 0
+      self.votes -= 1
+      self.save!
+    end 
   end
 end
