@@ -48,8 +48,7 @@ class SearchController < ApplicationController
 
   def post_gif_to_slack(image, text, channel, username)
     store_last_gif_data @team.domain, channel, image.id
-    responselink = '<' + image.url + '?' + Random.rand(500).to_s + '|' + ' /reactif ' + text + '>'
-    post_to_slack @team.webhook, username, channel, responselink
+    SlackPoster.new(text, image, username, channel, @team).post_gif
   end
 
   def no_gifs
@@ -76,8 +75,7 @@ class SearchController < ApplicationController
     @gif.upvote if query == 'upvote'
     @gif.downvote if query == 'downvote'
     Gifvotes.create team_domain: domain, channel: channel, username: username, gif_id: @gif.id, expiration: Time.now + 1.week
-    responselink = 'The previous gif was ' + query + 'd, ' + 'total votes: ' + @gif.votes.to_s
-    post_to_slack @team.webhook, 'Reactif', channel, responselink
+    SlackPoster.new(query, @gif, username, channel, @team).post_vote
   end
 
   def arleady_voted?(domain, channel, username, gif_id)
@@ -89,16 +87,4 @@ class SearchController < ApplicationController
     !vote.nil?
   end
 
-  def post_to_slack(webhook, username, channel, responselink)
-    responsechannel = '#' + channel
-    HTTParty.post(webhook,
-                  body: {
-                    payload: {
-                      username: username,
-                      channel: responsechannel,
-                      text: responselink
-                    }.to_json
-                  }
-                 )
-  end
 end
