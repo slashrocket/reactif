@@ -86,5 +86,4 @@ class SearchController < ApplicationController
     end
     !vote.nil?
   end
-
 end
