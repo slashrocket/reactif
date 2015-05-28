@@ -2,7 +2,8 @@
     <div class="col-sm-2 sidebar">
         <ul class="nav nav-sidebar">
             <li><%= link_to 'Overview', dashboard_path %></li>
-            <li class="active"><%= link_to 'Settings', dashboard_settings_path %></li>
+            <li class="active"><%= link_to 'Settings', dashboard_settings_path, class: "menu_settings" %></li>
+            <li><%= link_to 'API', dashboard_api_path %></li>
         </ul>
     </div>
     <div class="col-sm-10">
