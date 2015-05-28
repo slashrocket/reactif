@@ -87,7 +87,10 @@ class SearchController < ApplicationController
   end
 
   def arleady_voted?(domain, channel, username, gif_id)
-    vote = Gifvotes.find(team_domain: domain, channel: channel, username: username, gif_id: gif_id).first
+    vote = Gifvotes.find(team_domain: domain,
+                         channel: channel,
+                         username: username,
+                         gif_id: gif_id).first
     if vote.present? && vote.expiration <= Time.now
       vote.delete
       vote = nil
