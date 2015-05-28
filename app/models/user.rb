@@ -38,4 +38,9 @@ class User < ActiveRecord::Base
     return false unless name.present?
     "#{id}-#{name}"
   end
+
+  def set_token
+    self.token = SecureRandom.hex
+    self.save!
+  end
 end

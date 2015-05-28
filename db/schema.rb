@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150515204058) do
+ActiveRecord::Schema.define(version: 20150528144349) do
 
   create_table "gifs", force: :cascade do |t|
     t.string   "word"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20150515204058) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "name"
+    t.string   "token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
