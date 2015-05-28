@@ -17,7 +17,7 @@ gem 'httparty'
 gem 'figaro'
 gem 'redic' # gem to connect ohm to redis
 gem 'ohm' # gem to use redis to store objects
-
+gem 'active_model_serializers'
 group :production do
   gem 'pg'
 end

@@ -40,6 +40,8 @@ GEM
       ruby-progressbar (~> 1.4)
       unparser (~> 0.1)
       virtus (~> 1.0)
+    active_model_serializers (0.9.3)
+      activemodel (>= 3.2)
     activejob (4.2.1)
       activesupport (= 4.2.1)
       globalid (>= 0.3.0)
@@ -309,6 +311,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_mocker
+  active_model_serializers
   annotate
   better_errors
   binding_of_caller
