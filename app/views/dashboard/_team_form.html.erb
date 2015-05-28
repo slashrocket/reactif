@@ -1,0 +1,18 @@
+<%= form_for @team do |f| -%>
+  <div class="input-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="input-group">
+    <%= f.label :domain %>
+    <%= f.text_field :domain, class: 'form-control' %>
+  </div>
+  <div class="input-group">
+    <%= f.label :webhook, "Webhook" %>
+    <%= f.text_field :webhook, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="input-group">
+    <%= f.submit class: 'btn btn-success btn-sm' %>
+  </div>
+<% end %>
