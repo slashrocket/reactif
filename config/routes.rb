@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'dashboard/index'
-  namespace :api do
-    match 'gifs/:q', to: 'gifs#show', via: 'get'
+  namespace :api, defaults: { format:'json' } do
+    get 'gifs', to: 'gifs#show'
   end
   match '/', to: 'home#index', via: 'get', as: 'home'
   match 'search', to: 'search#index', via: [:get, :post], as: 'search'
