@@ -78,7 +78,11 @@ class SearchController < ApplicationController
     return false if arleady_voted? domain, channel, username, @gif.id
     @gif.upvote if query == 'upvote'
     @gif.downvote if query == 'downvote'
-    Gifvotes.create team_domain: domain, channel: channel, username: username, gif_id: @gif.id, expiration: Time.now + 1.week
+    Gifvotes.create team_domain: domain,
+                    channel: channel,
+                    username: username,
+                    gif_id: @gif.id,
+                    expiration: Time.now + 1.week
     SlackPoster.new(query, @gif, username, channel, @team).post_vote
   end
 
