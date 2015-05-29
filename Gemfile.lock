@@ -1,4 +1,16 @@
 GIT
+  remote: git://github.com/andreareginato/redis-throttle.git
+  revision: 98cf0bf5f2c3955408f2b5667c7b6ddcd459b6d4
+  specs:
+    redis-throttle (0.0.1)
+      activesupport
+      hiredis
+      rack
+      rack-throttle
+      redis
+      redis-namespace
+
+GIT
   remote: https://github.com/ndea/regressor.git
   revision: c13fe02a9c20a14df67d31b0a77d86970b078a17
   branch: master
@@ -193,6 +205,8 @@ GEM
     rack (1.6.1)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-throttle (0.4.0)
+      rack (>= 1.0.0)
     rails (4.2.1)
       actionmailer (= 4.2.1)
       actionpack (= 4.2.1)
@@ -221,6 +235,9 @@ GEM
     rdoc (4.2.0)
     redic (1.5.0)
       hiredis
+    redis (3.2.1)
+    redis-namespace (1.5.2)
+      redis (~> 3.0, >= 3.0.4)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rspec (3.2.0)
@@ -337,6 +354,7 @@ DEPENDENCIES
   quiet_assets
   rails
   redic
+  redis-throttle!
   regressor!
   rspec-rails
   sass-rails
