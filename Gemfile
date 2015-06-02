@@ -48,4 +48,5 @@ group :test do
   gem 'webmock'
   gem 'vcr'
   gem 'fuubar'
+  gem 'capybara'
 end
