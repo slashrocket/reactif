@@ -1,5 +1,4 @@
 class SlackPoster
-  require 'HTTParty'
 
   def initialize(query, gif, username, channel, team)
     @query = query

@@ -6,6 +6,9 @@ require 'nokogiri'
 require 'devise'
 require 'rack/redis_throttle'
 require 'regressor'
+require 'rubygems'
+require 'httparty'
+
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
