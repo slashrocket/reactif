@@ -15,4 +15,4 @@ REDIS_URL = <your redis url> (using this format: "redis://127.0.0.1:6379")
 
 You can send get requests directly to your dev box to have it send to your slack channel via the following:
 
-<dev box url>/search/slack?text=<search text query>&channel_name=<channel to test>&user_name=<test username>
+<dev box url>/search/slack?text=<search text query>&team_domain=<team domain>&channel_name=<channel to test>&user_name=<test username>
