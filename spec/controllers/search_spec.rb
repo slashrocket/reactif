@@ -71,6 +71,22 @@ describe SearchController do
         expect(team.teamgifs.find_by_gif_id(gif.gif_id).votes).to eq(votes)
       end
     end
+    context "should work more than one team belong to the same user" do
+      let(:user) { FactoryGirl.create(:user, email: Faker::Internet.email) }
+      let(:team1) { FactoryGirl.create(:team, user: user, webhook: "http://webook1.com/") }
+      let(:team2) { FactoryGirl.create(:team, user: user, webhook: "http://webook2.com/") }
 
+      it "it should query properly for the first team of the user" do
+        post_params[:team_domain] = team1.domain
+        post :slack, post_params
+        expect(response).to be_success
+      end
+
+      it "it should query properly for any other team of the same user" do
+        post_params[:team_domain] = team2.domain
+        post :slack, post_params
+        expect(response).to be_success
+      end
+    end
   end
 end
