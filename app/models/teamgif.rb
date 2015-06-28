@@ -25,4 +25,28 @@ class Teamgif < ActiveRecord::Base
     self.votes -= 1
     self.save!
   end
+
+  def self.random_gif_id
+    gifs = with_probability
+           .map { |tg| { gif_id: tg.gif_id, probability: tg.probability } }
+    prob_sum = 0
+    (0..gifs.length).each do |i|
+      prob_sum += gifs[i][:probability]
+      return gifs[i][:gif_id] if random_number <= prob_sum
+    end
+  end
+
+  private
+
+  def self.total_votes
+    sum(:votes)
+  end
+
+  def self.random_number
+    @random_number ||= rand
+  end
+
+  def self.with_probability
+    select("*, votes/#{total_votes.to_f} as probability")
+  end
 end

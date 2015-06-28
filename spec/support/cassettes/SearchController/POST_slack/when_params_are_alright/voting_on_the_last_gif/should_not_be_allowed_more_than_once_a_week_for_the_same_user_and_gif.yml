@@ -1,0 +1,596 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.reactiongifs.com/?s=dude&submit=Search
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 28 Jun 2015 02:58:34 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=db9b38e51d75723d3b1c9c9909672475f1435460314; expires=Mon, 27-Jun-16
+        02:58:34 GMT; path=/; domain=.reactiongifs.com; HttpOnly
+      X-Powered-By:
+      - PHP/5.4.41
+      X-Pingback:
+      - http://www.reactiongifs.com/xmlrpc.php
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - private, max-age=360, must-revalidate
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 1fd6217596510075-LAX
+    body:
+      encoding: ASCII-8BIT
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\">\n<head profile=\"http://gmpg.org/xfn/11\">\n<title>You
+        searched for dude - Reaction GIFs</title>\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=UTF-8\"/><script type=\"text/javascript\">\n//<![CDATA[\ntry{if
+        (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:\"cf\",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:\"/cdn-cgi/nexp/dok3v=1613a3a185/\"},atok:\"c24470be2e763f397e6031585aaab90b\",petok:\"6d6dc2e06b9d3b517b3bd01ede27fe10f85fed24-1435460314-1800\",zone:\"reactiongifs.com\",rocket:\"0\",apps:{\"abetterbrowser\":{\"ie\":\"7\"}}}];!function(a,b){a=document.createElement(\"script\"),b=document.getElementsByTagName(\"script\")[0],a.async=!0,a.src=\"//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=7e13c32551/cloudflare.min.js\",b.parentNode.insertBefore(a,b)}()}}catch(e){};\n//]]>\n</script>\n<script
+        type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function
+        r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var
+        o=e[t][1][n];return r(o?o:n)},o,o.exports)}return n[t].exports}if(\"function\"==typeof
+        __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return
+        r}({QJf3ax:[function(e,n){function t(e){function n(n,t,a){e&&e(n,t,a),a||(a={});for(var
+        u=c(n),f=u.length,s=i(a,o,r),p=0;f>p;p++)u[p].apply(s,t);return s}function
+        a(e,n){f[e]=c(e).concat(n)}function c(e){return f[e]||[]}function u(){return
+        t(n)}var f={};return{on:a,emit:n,create:u,listeners:c,_events:f}}function
+        r(){return{}}var o=\"nr@context\",i=e(\"gos\");n.exports=t()},{gos:\"7eSDFh\"}],ee:[function(e,n){n.exports=e(\"QJf3ax\")},{}],3:[function(e,n){function
+        t(e){return function(){r(e,[(new Date).getTime()].concat(i(arguments)))}}var
+        r=e(\"handle\"),o=e(1),i=e(2);\"undefined\"==typeof window.newrelic&&(newrelic=window.NREUM);var
+        a=[\"setPageViewName\",\"addPageAction\",\"setCustomAttribute\",\"finished\",\"addToTrace\",\"inlineHit\",\"noticeError\"];o(a,function(e,n){window.NREUM[n]=t(\"api-\"+n)}),n.exports=window.NREUM},{1:12,2:13,handle:\"D5DuLP\"}],\"7eSDFh\":[function(e,n){function
+        t(e,n,t){if(r.call(e,n))return e[n];var o=t();if(Object.defineProperty&&Object.keys)try{return
+        Object.defineProperty(e,n,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return
+        e[n]=o,o}var r=Object.prototype.hasOwnProperty;n.exports=t},{}],gos:[function(e,n){n.exports=e(\"7eSDFh\")},{}],handle:[function(e,n){n.exports=e(\"D5DuLP\")},{}],D5DuLP:[function(e,n){function
+        t(e,n,t){return r.listeners(e).length?r.emit(e,n,t):(o[e]||(o[e]=[]),void
+        o[e].push(n))}var r=e(\"ee\").create(),o={};n.exports=t,t.ee=r,r.q=o},{ee:\"QJf3ax\"}],id:[function(e,n){n.exports=e(\"XL7HBI\")},{}],XL7HBI:[function(e,n){function
+        t(e){var n=typeof e;return!e||\"object\"!==n&&\"function\"!==n?-1:e===window?0:i(e,o,function(){return
+        r++})}var r=1,o=\"nr@id\",i=e(\"gos\");n.exports=t},{gos:\"7eSDFh\"}],G9z0Bl:[function(e,n){function
+        t(){var e=d.info=NREUM.info,n=f.getElementsByTagName(\"script\")[0];if(e&&e.licenseKey&&e.applicationID&&n){c(p,function(n,t){n
+        in e||(e[n]=t)});var t=\"https\"===s.split(\":\")[0]||e.sslForHttp;d.proto=t?\"https://\":\"http://\",a(\"mark\",[\"onload\",i()]);var
+        r=f.createElement(\"script\");r.src=d.proto+e.agent,n.parentNode.insertBefore(r,n)}}function
+        r(){\"complete\"===f.readyState&&o()}function o(){a(\"mark\",[\"domContent\",i()])}function
+        i(){return(new Date).getTime()}var a=e(\"handle\"),c=e(1),u=(e(2),window),f=u.document,s=(\"\"+location).split(\"?\")[0],p={beacon:\"bam.nr-data.net\",errorBeacon:\"bam.nr-data.net\",agent:\"js-agent.newrelic.com/nr-632.min.js\"},d=n.exports={offset:i(),origin:s,features:{}};f.addEventListener?(f.addEventListener(\"DOMContentLoaded\",o,!1),u.addEventListener(\"load\",t,!1)):(f.attachEvent(\"onreadystatechange\",r),u.attachEvent(\"onload\",t)),a(\"mark\",[\"firstbyte\",i()])},{1:12,2:3,handle:\"D5DuLP\"}],loader:[function(e,n){n.exports=e(\"G9z0Bl\")},{}],12:[function(e,n){function
+        t(e,n){var t=[],o=\"\",i=0;for(o in e)r.call(e,o)&&(t[i]=n(o,e[o]),i+=1);return
+        t}var r=Object.prototype.hasOwnProperty;n.exports=t},{}],13:[function(e,n){function
+        t(e,n,t){n||(n=0),\"undefined\"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(0>o?0:o);++r<o;)i[r]=e[n+r];return
+        i}n.exports=t},{}]},{},[\"G9z0Bl\"]);</script>\n<link rel=\"stylesheet\" type=\"text/css\"
+        href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/style.css\"
+        media=\"screen\"/>\n<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS
+        2.0\" href=\"http://www.reactiongifs.com/feed/\"/>\n<link rel=\"pingback\"
+        href=\"http://www.reactiongifs.com/xmlrpc.php\"/>\n \n<meta name=\"robots\"
+        content=\"noindex,follow\"/>\n<link rel=\"canonical\" href=\"http://www.reactiongifs.com/search/dude/\"/>\n<link
+        rel=\"next\" href=\"http://www.reactiongifs.com/search/dude/page/2/\"/>\n<meta
+        property=\"og:locale\" content=\"en_US\"/>\n<meta property=\"og:type\" content=\"object\"/>\n<meta
+        property=\"og:title\" content=\"You searched for dude - Reaction GIFs\"/>\n<meta
+        property=\"og:url\" content=\"http://www.reactiongifs.com/search/dude/\"/>\n<meta
+        property=\"og:site_name\" content=\"Reaction GIFs\"/>\n<meta property=\"article:publisher\"
+        content=\"http://www.facebook.com/reactiongif\"/>\n<meta property=\"fb:admins\"
+        content=\"502908366\"/>\n \n<link rel=\"alternate\" type=\"application/rss+xml\"
+        title=\"Reaction GIFs &raquo; Search Results for &#8220;dude&#8221; Feed\"
+        href=\"http://www.reactiongifs.com/search/dude/feed/rss2/\"/>\n<script type=\"text/javascript\">\n\t\t\twindow._wpemojiSettings
+        = {\"baseUrl\":\"http:\\/\\/s.w.org\\/images\\/core\\/emoji\\/72x72\\/\",\"ext\":\".png\",\"source\":{\"concatemoji\":\"http:\\/\\/www.reactiongifs.com\\/wp-includes\\/js\\/wp-emoji-release.min.js?ver=4.2.2\"}};\n\t\t\t!function(a,b,c){function
+        d(a){var c=b.createElement(\"canvas\"),d=c.getContext&&c.getContext(\"2d\");return
+        d&&d.fillText?(d.textBaseline=\"top\",d.font=\"600 32px Arial\",\"flag\"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function
+        e(a){var c=b.createElement(\"script\");c.src=a,c.type=\"text/javascript\",b.getElementsByTagName(\"head\")[0].appendChild(c)}var
+        f,g;c.supports={simple:d(\"simple\"),flag:d(\"flag\")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener(\"DOMContentLoaded\",g,!1),a.addEventListener(\"load\",g,!1)):(a.attachEvent(\"onload\",g),b.attachEvent(\"onreadystatechange\",function(){\"complete\"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);\n\t\t</script>\n<style
+        type=\"text/css\">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0
+        .07em!important;vertical-align:-0.1em!important;background:none!important;padding:0!important;}</style>\n<link
+        rel='stylesheet' id='post-plugin-css' href='http://www.reactiongifs.com/wp-content/plugins/post/post-plugin.css?ver=1'
+        type='text/css' media='all'/>\n \n<script type=\"text/javascript\">\n\n\tvar
+        _gaq = _gaq || [];\n\t_gaq.push(['_setAccount', 'UA-89466-14']);\n\t_gaq.push(['_gat._forceSSL']);\n\t_gaq.push(['_trackPageview','/?s=dude&cat=plus-5-results']);\n\n\t(function
+        () {\n\t\tvar ga = document.createElement('script');\n\t\tga.type = 'text/javascript';\n\t\tga.async
+        = true;\n\t\tga.src = ('https:' == document.location.protocol ? 'https://ssl'
+        : 'http://www') + '.google-analytics.com/ga.js';\n\t\tvar s = document.getElementsByTagName('script')[0];\n\t\ts.parentNode.insertBefore(ga,
+        s);\n\t})();\n\n</script>\n \n<script type='text/javascript' src='http://www.reactiongifs.com/wp-includes/js/jquery/jquery.js?ver=1.11.2'></script>\n<script
+        type='text/javascript' src='http://www.reactiongifs.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>\n<script
+        type='text/javascript' src='http://www.reactiongifs.com/wp-content/themes/skeptical/includes/js/superfish.js?ver=4.2.2'></script>\n<script
+        type='text/javascript' src='http://www.reactiongifs.com/wp-content/themes/skeptical/includes/js/general.js?ver=4.2.2'></script>\n<link
+        rel=\"EditURI\" type=\"application/rsd+xml\" title=\"RSD\" href=\"http://www.reactiongifs.com/xmlrpc.php?rsd\"/>\n<link
+        rel=\"wlwmanifest\" type=\"application/wlwmanifest+xml\" href=\"http://www.reactiongifs.com/wp-includes/wlwmanifest.xml\"/>\n<meta
+        name=\"generator\" content=\"WordPress 4.2.2\"/>\n \n<script type=\"text/javascript\">\n(function
+        ()\n{\n    var s = document.createElement('script');\n    s.type = 'text/javascript';\n
+        \   s.async = true;\n    s.src = ('https:' == document.location.protocol ?
+        'https://s' : 'http://i') + '.po.st/share/script/post-widget.js#publisherKey=fbaju90ku38i5tkaq0au&retina=true';\n
+        \   var x = document.getElementsByTagName('script')[0];\n    x.parentNode.insertBefore(s,
+        x);\n})();\n</script><script type=\"text/javascript\">\n\twindow._wp_rp_static_base_url
+        = 'https://rp.zemanta.com/static/';\n\twindow._wp_rp_wp_ajax_url = \"http://www.reactiongifs.com/wp-admin/admin-ajax.php\";\n\twindow._wp_rp_plugin_version
+        = '3.5.4';\n\twindow._wp_rp_post_id = '10054';\n\twindow._wp_rp_num_rel_posts
+        = '8';\n\twindow._wp_rp_thumbnails = true;\n\twindow._wp_rp_post_title = 'The+Dude+Waiting';\n\twindow._wp_rp_post_tags
+        = ['waiting', 'bored', 'lebowski', 'the+dude', 'wait', 'reactions', 'a', 'dude',
+        'wait'];\n</script>\n<link rel=\"stylesheet\" href=\"http://www.reactiongifs.com/wp-content/plugins/related-posts/static/themes/vertical-m.css?version=3.5.4\"/>\n
+        \n<meta name=\"generator\" content=\"Skeptical 1.0.4\"/>\n<meta name=\"generator\"
+        content=\"WooFramework 6.0.3\"/>\n<!--[if IE 6]>\n<script type=\"text/javascript\"
+        src=\"http://www.reactiongifs.com/wp-content/themes/skeptical/includes/js/pngfix.js\"></script>\n<script
+        type=\"text/javascript\" src=\"http://www.reactiongifs.com/wp-content/themes/skeptical/includes/js/menu.js\"></script>\n<link
+        rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/css/ie6.css\"
+        />\n<![endif]-->\n<!--[if IE 7]>\n<link rel=\"stylesheet\" type=\"text/css\"
+        media=\"all\" href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/css/ie7.css\"
+        />\n<![endif]-->\n<!--[if IE 8]>\n<link rel=\"stylesheet\" type=\"text/css\"
+        media=\"all\" href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/css/ie8.css\"
+        />\n<![endif]-->\n \n<style type=\"text/css\">a:link,a:visited{color:#697e09}</style>\n
+        \n<link href=\"http://fonts.googleapis.com/css?family=Open+Sans%3A300%2C%3A300italic%2C%3Aregular%2C%3Aitalic%2C%3A600%2C%3A600italic%2C%3A700%2C%3A700italic%2C%3A800%2C%3A800italic|Ubuntu%3A300%2C%3A300italic%2C%3Aregular%2C%3Aitalic%2C%3A500%2C%3A500italic%2C%3A700%2C%3A700italic\"
+        rel=\"stylesheet\" type=\"text/css\"/>\n \n<style type=\"text/css\">body{font:normal
+        12px/1.5em Open Sans;color:#55555;}#navigation,#navigation .nav a{font:normal
+        12px/1em Open Sans;color:#ffffff;}.post .title,.post .title a:link,.post .title
+        a:visited{font:bold 28px/1em &quot;HelveticaNeue&quot;, Helvetica, sans-serif;color:#222222;
+        }#main .post .post-meta,#main .post .post-meta a,.post .post-meta .post-date{font:normal
+        14px/1em Ubuntu;color:#ffffff;}.entry,.entry p{font:normal 16px/1.5em Open
+        Sans;color:#000000;}h1,h2,h3,h4,h5,h6{font-family:Open Sans}.widget h3{font:bold
+        18px/1em Open Sans;color:#333333;}</style>\n \n<link href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/styles/blue.css\"
+        rel=\"stylesheet\" type=\"text/css\"/>\n \n<link rel=\"shortcut icon\" href=\"http://www.reactiongifs.com/wp-content/uploads/2012/11/reactiongifs.com_.ico\"/>\n
+        \n<style type=\"text/css\">.post-shortlink{font-size:12px;font-family:'' Helvetica
+        Neue '',Helvetica,Arial,sans-serif;font-weight:700;background-color:#fffff;border:2px
+        solid #dbdbdb;padding:5px;-webkit-border-radius:7px;-moz-border-radius:7px;border-radius:7px;color:#2D4567}.post-shortlink2{font-size:10px;font-family:''
+        Helvetica Neue '',Helvetica,Arial,sans-serif;font-weight:400;background-color:#333;border:1px
+        solid #666;padding:1px;color:#999}</style>\n \n<link href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/functions/css/shortcodes.css\"
+        rel=\"stylesheet\" type=\"text/css\"/>\n \n<link href=\"http://www.reactiongifs.com/wp-content/themes/skeptical/custom.css\"
+        rel=\"stylesheet\" type=\"text/css\"/>\n</head>\n<body class=\"search search-results
+        unknown alt-style-blue\">\n<div id=\"wrapper\">\n<div id=\"header\">\n<div
+        class=\"col-full\">\n<div id=\"logo\">\n<a href=\"http://www.reactiongifs.com\"
+        title=\"Say it with a GIF!\">\n<img src=\"http://www.reactiongifs.com/wp-content/uploads/2012/12/reaction-gifs4.png\"
+        alt=\"Reaction GIFs\"/>\n</a>\n<h1 class=\"site-title\"><a href=\"http://www.reactiongifs.com\">Reaction
+        GIFs</a></h1>\n<span class=\"site-description\">Say it with a GIF!</span>\n</div>
+        \n<div id=\"navigation\">\n<ul id=\"main-nav\" class=\"nav fl\">\n<li class=\"page_item\"><a
+        href=\"http://www.reactiongifs.com\">Home</a></li>\n<li class=\"page_item
+        page-item-2\"><a href=\"http://www.reactiongifs.com/about/\">ABOUT</a></li>\n<li
+        class=\"page_item page-item-40 page_item_has_children\"><a href=\"http://www.reactiongifs.com/galleries/\">GALLERIES</a>\n<ul
+        class='children'>\n<li class=\"page_item page-item-62\"><a href=\"http://www.reactiongifs.com/galleries/yes/\">Yes</a></li>\n<li
+        class=\"page_item page-item-88\"><a href=\"http://www.reactiongifs.com/galleries/no/\">No</a></li>\n<li
+        class=\"page_item page-item-292\"><a href=\"http://www.reactiongifs.com/galleries/omg/\">OMG!</a></li>\n<li
+        class=\"page_item page-item-366\"><a href=\"http://www.reactiongifs.com/galleries/dance-party/\">Dance
+        Party</a></li>\n<li class=\"page_item page-item-912\"><a href=\"http://www.reactiongifs.com/galleries/popcorn-gifs/\">Popcorn
+        GIFs</a></li>\n<li class=\"page_item page-item-4115\"><a href=\"http://www.reactiongifs.com/galleries/lol/\">LOL</a></li>\n<li
+        class=\"page_item page-item-4877\"><a href=\"http://www.reactiongifs.com/galleries/love/\">Love</a></li>\n<li
+        class=\"page_item page-item-9444\"><a href=\"http://www.reactiongifs.com/galleries/wtf/\">WTF?</a></li>\n</ul>\n</li>\n<li
+        class=\"page_item page-item-1366\"><a href=\"http://www.reactiongifs.com/tags/\">TAGS</a></li>\n<li
+        class=\"page_item page-item-14837\"><a href=\"http://www.reactiongifs.com/contact/\">CONTACT</a></li>\n</ul>
+        \n<ul class=\"rss fr\">\n<li class=\"sub-rss\"><a href=\"http://www.reactiongifs.com/feed/\">Subscribe
+        to RSS</a></li>\n</ul>\n</div> \n</div> \n</div>\n<div style=\"width: 730px;
+        height: 90px; margin-top:25px; margin-right:auto; margin-bottom:25px; margin-left:auto;\"><script
+        async=\"\" src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>\n
+        \n<ins class=\"adsbygoogle\" style=\"display:inline-block;width:728px;height:90px\"
+        data-ad-client=\"ca-pub-8726219848488817\" data-ad-slot=\"3853180816\"></ins>\n<script>\r\n(adsbygoogle
+        = window.adsbygoogle || []).push({});\r\n</script></div>\n \n<div id=\"content\"
+        class=\"col-full\">\n<div id=\"main\" class=\"col-left\">\n<span class=\"archive_header\">Search
+        results for dude</span>\n \n<div class=\"post post-10054 type-post status-publish
+        format-standard has-post-thumbnail hentry category-reactiongifs tag-bored
+        tag-lebowski tag-the-dude tag-wait tag-waiting\">\n<div class=\"post-meta
+        col-left\">\n<span class=\"post-date\">May 27, 2013<span class=\"bg\">&nbsp;</span></span>\n<ul>\n<li
+        class=\"post-category\">Tags: <a href=\"http://www.reactiongifs.com/tag/bored/\"
+        rel=\"tag\">bored</a>, <a href=\"http://www.reactiongifs.com/tag/lebowski/\"
+        rel=\"tag\">Lebowski</a>, <a href=\"http://www.reactiongifs.com/tag/the-dude/\"
+        rel=\"tag\">The Dude</a>, <a href=\"http://www.reactiongifs.com/tag/wait/\"
+        rel=\"tag\">wait</a>, <a href=\"http://www.reactiongifs.com/tag/waiting/\"
+        rel=\"tag\">waiting</a></li>\n<li class=\"post-author\">Shortlink:\n<input
+        size=\"23\" class=\"post-shortlink2\" type='text' value='http://reactiongifs.com/?p=10054'
+        onclick='this.focus(); this.select();'/></li>\n<li class=\"comments\"><a href=\"http://www.reactiongifs.com/the-dude-waiting/#respond\"><span
+        class=\"dsq-postid\" data-dsqidentifier=\"10054 http://www.reactiongifs.com/?p=10054\">Comments
+        ( 0 )</span></a></li>\n</ul>\n</div> \n<div class=\"middle col-left\">\n<h2
+        class=\"title\"><a href=\"http://www.reactiongifs.com/the-dude-waiting/\"
+        rel=\"bookmark\" title=\"The Dude Waiting\">The Dude Waiting</a></h2>\n<div
+        class=\"entry\">\n<p><a href=\"http://www.reactiongifs.com/wp-content/uploads/2013/05/DudeWaiting.gif\"><img
+        class=\"alignnone  wp-image-10055\" alt=\"Dude Waiting\" src=\"http://www.reactiongifs.com/wp-content/uploads/2013/05/DudeWaiting.gif\"
+        width=\"450\" height=\"270\"/></a></p>\n<div pw:image='' class='pw-widget
+        pw-size-medium pw-horizontal' pw:url=\"http://www.reactiongifs.com/the-dude-waiting/\"
+        pw:title=\"The Dude Waiting\" pw:image=''>\n<a class='pw-button-reddit'></a>\n<a
+        class='pw-button-twitter'></a>\n<a class='pw-button-facebook'></a>\n<a class='pw-button-tumblr'></a>\n<a
+        class='pw-button-pinterest'></a>\n<a class='pw-button-googleplus'></a>\n<a
+        class='pw-button-stumbleupon'></a>\n<a class='pw-button-gmail'></a>\n</div>
+        </div>\n<div class=\"post-more\">\n</div>\n</div> \n<div class=\"fix\"></div>\n</div>
+        \n \n<div class=\"post post-4802 type-post status-publish format-standard
+        has-post-thumbnail hentry category-reactiongifs tag-dude tag-yes tag-you-got-it\">\n<div
+        class=\"post-meta col-left\">\n<span class=\"post-date\">December 16, 2012<span
+        class=\"bg\">&nbsp;</span></span>\n<ul>\n<li class=\"post-category\">Tags:
+        <a href=\"http://www.reactiongifs.com/tag/dude/\" rel=\"tag\">dude</a>, <a
+        href=\"http://www.reactiongifs.com/tag/yes/\" rel=\"tag\">yes</a>, <a href=\"http://www.reactiongifs.com/tag/you-got-it/\"
+        rel=\"tag\">you got it</a></li>\n<li class=\"post-author\">Shortlink:\n<input
+        size=\"23\" class=\"post-shortlink2\" type='text' value='http://reactiongifs.com/?p=4802'
+        onclick='this.focus(); this.select();'/></li>\n<li class=\"comments\"><a href=\"http://www.reactiongifs.com/you-got-it-dude/#respond\"><span
+        class=\"dsq-postid\" data-dsqidentifier=\"4802 http://www.reactiongifs.com/?p=4802\">Comments
+        ( 0 )</span></a></li>\n</ul>\n</div> \n<div class=\"middle col-left\">\n<h2
+        class=\"title\"><a href=\"http://www.reactiongifs.com/you-got-it-dude/\" rel=\"bookmark\"
+        title=\"You got it dude.\">You got it dude.</a></h2>\n<div class=\"entry\">\n<p><a
+        href=\"http://www.reactiongifs.com/wp-content/uploads/2012/12/you-got-it-dude.gif\"><img
+        class=\"alignnone  wp-image-4803\" alt=\"You got it dude\" src=\"http://www.reactiongifs.com/wp-content/uploads/2012/12/you-got-it-dude.gif\"
+        width=\"400\" height=\"274\"/></a></p>\n<div pw:image='' class='pw-widget
+        pw-size-medium pw-horizontal' pw:url=\"http://www.reactiongifs.com/you-got-it-dude/\"
+        pw:title=\"You got it dude.\" pw:image=''>\n<a class='pw-button-reddit'></a>\n<a
+        class='pw-button-twitter'></a>\n<a class='pw-button-facebook'></a>\n<a class='pw-button-tumblr'></a>\n<a
+        class='pw-button-pinterest'></a>\n<a class='pw-button-googleplus'></a>\n<a
+        class='pw-button-stumbleupon'></a>\n<a class='pw-button-gmail'></a>\n</div>
+        </div>\n<div class=\"post-more\">\n</div>\n</div> \n<div class=\"fix\"></div>\n</div>
+        \n \n<div class=\"post post-23820 type-post status-publish format-standard
+        has-post-thumbnail hentry category-reactiongifs tag-chill tag-dude tag-mark-wahlberg
+        tag-relax\">\n<div class=\"post-meta col-left\">\n<span class=\"post-date\">March
+        11, 2015<span class=\"bg\">&nbsp;</span></span>\n<ul>\n<li class=\"post-category\">Tags:
+        <a href=\"http://www.reactiongifs.com/tag/chill/\" rel=\"tag\">chill</a>,
+        <a href=\"http://www.reactiongifs.com/tag/dude/\" rel=\"tag\">dude</a>, <a
+        href=\"http://www.reactiongifs.com/tag/mark-wahlberg/\" rel=\"tag\">Mark Wahlberg</a>,
+        <a href=\"http://www.reactiongifs.com/tag/relax/\" rel=\"tag\">relax</a></li>\n<li
+        class=\"post-author\">Shortlink:\n<input size=\"23\" class=\"post-shortlink2\"
+        type='text' value='http://reactiongifs.com/?p=23820' onclick='this.focus();
+        this.select();'/></li>\n<li class=\"comments\"><a href=\"http://www.reactiongifs.com/dude-just-chill/#respond\"><span
+        class=\"dsq-postid\" data-dsqidentifier=\"23820 http://www.reactiongifs.com/?p=23820\">Comments
+        ( 0 )</span></a></li>\n</ul>\n</div> \n<div class=\"middle col-left\">\n<h2
+        class=\"title\"><a href=\"http://www.reactiongifs.com/dude-just-chill/\" rel=\"bookmark\"
+        title=\"Dude Just Chill\">Dude Just Chill</a></h2>\n<div class=\"entry\">\n<p><a
+        href=\"http://www.reactiongifs.com/r/djco.gif\"><img class=\"alignnone size-full
+        wp-image-23809\" src=\"http://www.reactiongifs.com/r/djco.gif\" alt=\"Dude
+        Just Chill\" width=\"500\" height=\"378\"/></a></p>\n<div pw:image='' class='pw-widget
+        pw-size-medium pw-horizontal' pw:url=\"http://www.reactiongifs.com/dude-just-chill/\"
+        pw:title=\"Dude Just Chill\" pw:image=''>\n<a class='pw-button-reddit'></a>\n<a
+        class='pw-button-twitter'></a>\n<a class='pw-button-facebook'></a>\n<a class='pw-button-tumblr'></a>\n<a
+        class='pw-button-pinterest'></a>\n<a class='pw-button-googleplus'></a>\n<a
+        class='pw-button-stumbleupon'></a>\n<a class='pw-button-gmail'></a>\n</div>
+        </div>\n<div class=\"post-more\">\n</div>\n</div> \n<div class=\"fix\"></div>\n</div>
+        \n<div style=\"width:499px; background:#ffffff; margin:0px 0px 35px 180px;
+        padding:20px 0px 20px 20px; \">\n<script type=\"text/javascript\"><!--\r\ngoogle_ad_client
+        = \"ca-pub-8726219848488817\";\r\n/* RG Side Widget */\r\ngoogle_ad_slot =
+        \"2157793217\";\r\ngoogle_ad_width = 300;\r\ngoogle_ad_height = 250;\r\n//-->\r\n</script>\n<script
+        type=\"text/javascript\" src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">\r\n</script>\n</div>\n
+        \n<div class=\"post post-19002 type-post status-publish format-standard has-post-thumbnail
+        hentry category-reactiongifs tag-bothered tag-incredulous tag-o-rly tag-oh-really
+        tag-stir tag-stirring tag-the-big-lebowski tag-the-dude tag-you-dont-say\">\n<div
+        class=\"post-meta col-left\">\n<span class=\"post-date\">March 4, 2014<span
+        class=\"bg\">&nbsp;</span></span>\n<ul>\n<li class=\"post-category\">Tags:
+        <a href=\"http://www.reactiongifs.com/tag/bothered/\" rel=\"tag\">bothered</a>,
+        <a href=\"http://www.reactiongifs.com/tag/incredulous/\" rel=\"tag\">incredulous</a>,
+        <a href=\"http://www.reactiongifs.com/tag/o-rly/\" rel=\"tag\">o rly?</a>,
+        <a href=\"http://www.reactiongifs.com/tag/oh-really/\" rel=\"tag\">oh really?</a>,
+        <a href=\"http://www.reactiongifs.com/tag/stir/\" rel=\"tag\">stir</a>, <a
+        href=\"http://www.reactiongifs.com/tag/stirring/\" rel=\"tag\">stirring</a>,
+        <a href=\"http://www.reactiongifs.com/tag/the-big-lebowski/\" rel=\"tag\">The
+        Big Lebowski</a>, <a href=\"http://www.reactiongifs.com/tag/the-dude/\" rel=\"tag\">The
+        Dude</a>, <a href=\"http://www.reactiongifs.com/tag/you-dont-say/\" rel=\"tag\">you
+        don't say</a></li>\n<li class=\"post-author\">Shortlink:\n<input size=\"23\"
+        class=\"post-shortlink2\" type='text' value='http://reactiongifs.com/?p=19002'
+        onclick='this.focus(); this.select();'/></li>\n<li class=\"comments\"><a href=\"http://www.reactiongifs.com/dont-say/#respond\"><span
+        class=\"dsq-postid\" data-dsqidentifier=\"19002 http://www.reactiongifs.com/?p=19002\">Comments
+        ( 0 )</span></a></li>\n</ul>\n</div> \n<div class=\"middle col-left\">\n<h2
+        class=\"title\"><a href=\"http://www.reactiongifs.com/dont-say/\" rel=\"bookmark\"
+        title=\"You Don&#8217;t Say\">You Don&#8217;t Say</a></h2>\n<div class=\"entry\">\n<p><a
+        href=\"http://www.reactiongifs.com/r/stir.gif\"><img class=\"alignnone  wp-image-18985\"
+        alt=\"the dude stirs\" src=\"http://www.reactiongifs.com/r/stir.gif\" width=\"479\"/></a></p>\n<div
+        pw:image='' class='pw-widget pw-size-medium pw-horizontal' pw:url=\"http://www.reactiongifs.com/dont-say/\"
+        pw:title=\"You Don&#8217;t Say\" pw:image=''>\n<a class='pw-button-reddit'></a>\n<a
+        class='pw-button-twitter'></a>\n<a class='pw-button-facebook'></a>\n<a class='pw-button-tumblr'></a>\n<a
+        class='pw-button-pinterest'></a>\n<a class='pw-button-googleplus'></a>\n<a
+        class='pw-button-stumbleupon'></a>\n<a class='pw-button-gmail'></a>\n</div>
+        </div>\n<div class=\"post-more\">\n</div>\n</div> \n<div class=\"fix\"></div>\n</div>
+        \n<div class=\"nav-entries\">\n<div class=\"nav-prev fl\"></div>\n<div class=\"nav-next
+        fr\"><a href=\"http://www.reactiongifs.com/page/2/?s=dude&#038;submit=Search\">
+        Older Entries &raquo;</a></div>\n<div class=\"fix\"></div>\n</div>\n</div>
+        \n<div id=\"sidebar\" class=\"col-right\">\n<div class=\"primary\">\n<div
+        id=\"text-2\" class=\"widget widget_text\"><h3>I am feeling . . .</h3> <div
+        class=\"textwidget\"><form><div class=\"styled-select\">\n<select onChange=\"if(this.selectedIndex!=0)\r\nself.location=this.options[this.selectedIndex].value\">\n<option
+        selected=\"selected\">???\n<option value=\"http://www.reactiongifs.com/tag/affectionate/\">Affectionate\n<option
+        value=\"http://www.reactiongifs.com/tag/amused/\">Amused\n<option value=\"http://www.reactiongifs.com/tag/angry/\">Angry\n<option
+        value=\"http://www.reactiongifs.com/tag/aroused/\">Aroused\n<option value=\"http://www.reactiongifs.com/tag/bored/\">Bored\n<option
+        value=\"http://www.reactiongifs.com/tag/fail/\">Clumsy\n<option value=\"http://www.reactiongifs.com/tag/wtf/\">Confused\n<option
+        value=\"http://www.reactiongifs.com/tag/dance/\">Dancey\n<option value=\"http://www.reactiongifs.com/tag/disappointed\">Disappointed\n<option
+        value=\"http://www.reactiongifs.com/tag/disgust/\">Disgusted\n<option value=\"http://www.reactiongifs.com/tag/do-not-want/\">Disinterested\n<option
+        value=\"http://www.reactiongifs.com/tag/embarrassed/\">Embarrassed\n<option
+        value=\"http://www.reactiongifs.com/tag/excited/\">Excited\n<option value=\"http://www.reactiongifs.com/tag/frustrated/\">Frustrated\n<option
+        value=\"http://www.reactiongifs.com/tag/happy/\">Happy\n<option value=\"http://www.reactiongifs.com/tag/meh/\">Indifferent\n<option
+        value=\"http://www.reactiongifs.com/tag/interested/\">Interested\n<option
+        value=\"http://www.reactiongifs.com/tag/lazy/\">Lazy\n<option value=\"http://www.reactiongifs.com/tag/do-want/\">Longing\n<option
+        value=\"http://www.reactiongifs.com/tag/proud/\">Proud\n<option value=\"http://www.reactiongifs.com/tag/sad/\">Sad\n<option
+        value=\"http://www.reactiongifs.com/tag/satisfied/\">Satisfied\n<option value=\"http://www.reactiongifs.com/tag/scared/\">Scared\n<option
+        value=\"http://www.reactiongifs.com/tag/shocked/\">Shocked\n<option value=\"http://www.reactiongifs.com/tag/skeptical/\">Skeptical\n<option
+        value=\"http://www.reactiongifs.com/tag/sleepy/\">Sleepy\n<option value=\"http://www.reactiongifs.com/tag/surprised,/\">Surprised\n<option
+        value=\"http://www.reactiongifs.com/tag/wild/\">Wild\n</select>\n</div>\n</form></div>\n</div><div
+        id=\"text-3\" class=\"widget widget_text\"><h3>My answer is . . .</h3> <div
+        class=\"textwidget\"><form><div class=\"styled-select\">\n<select onChange=\"if(this.selectedIndex!=0)\r\nself.location=this.options[this.selectedIndex].value\">\n<option
+        selected=\"selected\">???\n<option value=\"http://www.reactiongifs.com/tag/hell-yes/\">Hell
+        Yes!\n<option value=\"http://www.reactiongifs.com/tag/yes/\">Yes\n<option
+        value=\"http://www.reactiongifs.com/tag/unsure/\">Undecided\n<option value=\"http://www.reactiongifs.com/tag/no/\">No\n<option
+        value=\"http://www.reactiongifs.com/tag/hell-no/\">Hell No!\n</select>\n</div>\n</form></div>\n</div>
+        <div id=\"woo_search-4\" class=\"widget widget_woo_search\"> <h3>Search</h3>
+        <div class=\"search_main widget\">\n<form method=\"get\" class=\"searchform\"
+        action=\"http://www.reactiongifs.com/\">\n<input type=\"text\" class=\"field
+        s\" name=\"s\" value=\"Search...\" onfocus=\"if (this.value == 'Search...')
+        {this.value = '';}\" onblur=\"if (this.value == '') {this.value = 'Search...';}\"/>\n<input
+        type=\"submit\" class=\"submit button\" name=\"submit\" value=\"Search\"/>\n</form>\n<div
+        class=\"fix\"></div>\n</div> </div>\n<div class=\"adspace-widget widget\">\n<script
+        type=\"text/javascript\" src=\"http://ap.lijit.com/www/delivery/fpi.js?z=278844&u=reactiongifs&width=300&height=250\"></script>\n</div>\n</div>\n</div>
+        \n</div> \n<div id=\"footer-widgets\">\n<div class=\"col-full\">\n<div class=\"block\">\n<div
+        class=\"adspace-widget widget\">\n<div style=\"margin-left: 125px;\">\n<script
+        type=\"text/javascript\" src=\"http://ap.lijit.com/www/delivery/fpi.js?z=278842&u=reactiongifs&width=728&height=90\"></script>\n</div>\n</div>
+        </div>\n<div class=\"block\">\n</div>\n<div class=\"block\">\n</div>\n<div
+        class=\"block last\">\n</div>\n<div class=\"fix\"></div>\n</div>\n</div> \n<div
+        id=\"footer\">\n<div class=\"footer-inside\">\n<div id=\"copyright\" class=\"col-left\">\n<p>&copy;
+        2015 Reaction GIFs. All Rights Reserved. | <a href=\"http://www.pichacks.com\">Make
+        a Funny Face</a> | <a href=\"http://www.zentips.org\">Zen Tips</a> | <a href=\"http://www.raddudes.com\">Rad
+        Dudes</a> | <a href=\"http://www.hungrytrees.com\">Hungry Trees</a> | <a href=\"http://www.cutecatgifs.com\">Cute
+        Cat GIFs</a></p>\n</div>\n<div id=\"credit\" class=\"col-right\">\n<p>\n \n</p>\n</div>\n<div
+        class=\"fix\"></div>\n</div>\n</div> \n</div> \n  <script type=\"text/javascript\">\r\n
+        \       // <![CDATA[\r\n        var disqus_shortname = 'reactiongifs';\r\n
+        \       (function () {\r\n            var nodes = document.getElementsByTagName('span');\r\n
+        \           for (var i = 0, url; i < nodes.length; i++) {\r\n                if
+        (nodes[i].className.indexOf('dsq-postid') != -1) {\r\n                    nodes[i].parentNode.setAttribute('data-disqus-identifier',
+        nodes[i].getAttribute('data-dsqidentifier'));\r\n                    url =
+        nodes[i].parentNode.href.split('#', 1);\r\n                    if (url.length
+        == 1) { url = url[0]; }\r\n                    else { url = url[1]; }\r\n
+        \                   nodes[i].parentNode.href = url + '#disqus_thread';\r\n
+        \               }\r\n            }\r\n            var s = document.createElement('script');
+        \r\n            s.async = true;\r\n            s.type = 'text/javascript';\r\n
+        \           s.src = '//' + disqus_shortname + '.disqus.com/count.js';\r\n
+        \           (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);\r\n
+        \       }());\r\n        // ]]>\r\n        </script>\n <script type=\"text/javascript\">\r\n\r\n
+        \ var _gaq = _gaq || [];\r\n  _gaq.push(['_setAccount', 'UA-89466-14']);\r\n
+        \ _gaq.push(['_trackPageview']);\r\n\r\n  (function() {\r\n    var ga = document.createElement('script');
+        ga.type = 'text/javascript'; ga.async = true;\r\n    ga.src = ('https:' ==
+        document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\r\n
+        \   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga,
+        s);\r\n  })();\r\n\r\n</script>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"bam.nr-data.net\",\"licenseKey\":\"61ccc595da\",\"applicationID\":\"2949910\",\"transactionName\":\"NlMDZ0BVWBICABVfVw8ZIFBGXVkPTBAEV0oCXg==\",\"queueTime\":0,\"applicationTime\":73,\"atts\":\"GhQAEQhPSxw=\",\"errorBeacon\":\"bam.nr-data.net\",\"agent\":\"js-agent.newrelic.com\\/nr-632.min.js\"}</script></body>\n</html>"
+    http_version: 
+  recorded_at: Mon, 06 Jul 2015 02:58:31 GMT
+- request:
+    method: post
+    uri: http://hooks.slack.com/services/T0383B6CH/B04RRMZ1E/
+    body:
+      encoding: UTF-8
+      string: payload=%7B%22username%22%3A%22kelsie%22%2C%22channel%22%3A%22%23testing_reactif%22%2C%22text%22%3A%22%5Cu003chttp%3A%2F%2Fwww.reactiongifs.com%2Fr%2Fstir.gif%3F247%7C%20%2Freactif%20dude%5Cu003e%22%7D
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 28 Jun 2015 02:59:44 GMT
+      Location:
+      - https://hooks.slack.com/services/T0383B6CH/B04RRMZ1E/
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Length:
+      - '20'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    http_version: 
+  recorded_at: Sun, 28 Jun 2015 02:59:43 GMT
+- request:
+    method: get
+    uri: https://hooks.slack.com/services/T0383B6CH/B04RRMZ1E/
+    body:
+      encoding: UTF-8
+      string: payload=%7B%22username%22%3A%22kelsie%22%2C%22channel%22%3A%22%23testing_reactif%22%2C%22text%22%3A%22%5Cu003chttp%3A%2F%2Fwww.reactiongifs.com%2Fr%2Fstir.gif%3F247%7C%20%2Freactif%20dude%5Cu003e%22%7D
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 28 Jun 2015 02:59:44 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Length:
+      - '28'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: No token
+    http_version: 
+  recorded_at: Sun, 28 Jun 2015 02:59:44 GMT
+- request:
+    method: post
+    uri: http://hooks.slack.com/services/T0383B6CH/B04RRMZ1E/
+    body:
+      encoding: UTF-8
+      string: payload=%7B%22username%22%3A%22kelsie%22%2C%22channel%22%3A%22%23testing_reactif%22%2C%22text%22%3A%22The%20previous%20gif%20was%20upvoted%2C%20total%20votes%3A%2026%22%7D
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 28 Jun 2015 02:59:45 GMT
+      Location:
+      - https://hooks.slack.com/services/T0383B6CH/B04RRMZ1E/
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Length:
+      - '20'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    http_version: 
+  recorded_at: Sun, 28 Jun 2015 02:59:44 GMT
+- request:
+    method: get
+    uri: https://hooks.slack.com/services/T0383B6CH/B04RRMZ1E/
+    body:
+      encoding: UTF-8
+      string: payload=%7B%22username%22%3A%22kelsie%22%2C%22channel%22%3A%22%23testing_reactif%22%2C%22text%22%3A%22The%20previous%20gif%20was%20upvoted%2C%20total%20votes%3A%2026%22%7D
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 28 Jun 2015 02:59:45 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Length:
+      - '28'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: No token
+    http_version: 
+  recorded_at: Sun, 28 Jun 2015 02:59:45 GMT
+- request:
+    method: post
+    uri: http://hooks.slack.com/services/T0383B6CH/B04RRMZ1E/
+    body:
+      encoding: UTF-8
+      string: payload=%7B%22username%22%3A%22kelsie%22%2C%22channel%22%3A%22%23testing_reactif%22%2C%22text%22%3A%22The%20previous%20gif%20was%20downvoted%2C%20total%20votes%3A%2025%22%7D
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 28 Jun 2015 02:59:46 GMT
+      Location:
+      - https://hooks.slack.com/services/T0383B6CH/B04RRMZ1E/
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Length:
+      - '20'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    http_version: 
+  recorded_at: Mon, 06 Jul 2015 02:59:45 GMT
+- request:
+    method: get
+    uri: https://hooks.slack.com/services/T0383B6CH/B04RRMZ1E/
+    body:
+      encoding: UTF-8
+      string: payload=%7B%22username%22%3A%22kelsie%22%2C%22channel%22%3A%22%23testing_reactif%22%2C%22text%22%3A%22The%20previous%20gif%20was%20downvoted%2C%20total%20votes%3A%2025%22%7D
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 28 Jun 2015 02:59:46 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Length:
+      - '28'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: No token
+    http_version: 
+  recorded_at: Mon, 06 Jul 2015 02:59:45 GMT
+recorded_with: VCR 2.9.3

@@ -5,7 +5,8 @@ describe SearchController do
   describe "POST #slack", vcr: true do
     
     let(:team) { FactoryGirl.create(:team) }
-    let!(:post_params) { post_params = {text: "dude", channel_name: "testing_reactif", user_name: Faker::Internet.user_name, team_domain: team.domain}}
+    let(:channel_name) { "testing_reactif" }
+    let!(:post_params) { post_params = {text: "dude", channel_name: channel_name, user_name: Faker::Internet.user_name, team_domain: team.domain}}
 
     context "when params aren't correct" do
       it "should return 'No gifs found' if the query doesn't return gifs" do
@@ -34,43 +35,33 @@ describe SearchController do
         expect(Gif.count).not_to eq(gifs_count)
       end
 
-      it "should count votes when a gif is upvoted or downvoted" do
-        post :slack, post_params
+      context "when voting on the last gif" do
+        before { post :slack, post_params }
+        let(:last_gif) { Lastgif.find(team_domain: team.domain, channel: channel_name).first }
+        let(:teamgif) { team.teamgifs.find_by_gif_id(last_gif.gif_id) }
 
-        gif = Lastgif.find(team_domain: team.domain, channel: "testing_reactif").first
-        votes = team.teamgifs.find_by_gif_id(gif.gif_id).votes
+        it "upvoting should increment votes by 1" do
+          post_params[:text] = "upvote"
+          expect{post :slack, post_params}.to change{teamgif.reload.votes}.by(1)
+        end
 
-        post_params[:text], post_params[:user_name] = "upvote", "user1"
-        post :slack, post_params
-        expect(team.teamgifs.find_by_gif_id(gif.gif_id).votes).not_to eq(votes)
+        it "downvoting should increment votes by -1" do
+          post_params[:text] = "downvote"
+          expect{post :slack, post_params}.to change{teamgif.reload.votes}.by(-1)
+        end
 
-        post_params[:text], post_params[:user_name], = "downvote", "user2"
-        post :slack, post_params
-        expect(team.teamgifs.find_by_gif_id(gif.gif_id).votes).to eq(votes)
-      end
-
-      it "should not allow users to vote more than once a week the same gif" do
-
-        post :slack, post_params
-        gif = Lastgif.find(team_domain: team.domain, channel: "testing_reactif").first
-        votes = team.teamgifs.find_by_gif_id(gif.gif_id).votes
-
-        post_params[:text], post_params[:user_name] = "upvote", "user1"
-        post :slack, post_params
-        expect(team.teamgifs.find_by_gif_id(gif.gif_id).votes).to eq(votes + 1)
-
-        post :slack, post_params
-        expect(team.teamgifs.find_by_gif_id(gif.gif_id).votes).to eq(votes + 1)
-
-        post_params[:text] = "downvote"
-        post :slack, post_params
-        expect(team.teamgifs.find_by_gif_id(gif.gif_id).votes).to eq(votes + 1)
-
-        Timecop.freeze(Time.now + 8.days)
-        post :slack, post_params
-        expect(team.teamgifs.find_by_gif_id(gif.gif_id).votes).to eq(votes)
+        it "the same user should not be able to vote more than once a week on the same gif" do
+          post_params[:text] = "upvote"
+          expect{post :slack, post_params}.to change{teamgif.reload.votes}.by(1)
+          expect{post :slack, post_params}.not_to change{teamgif.reload.votes}
+          post_params[:text] = "downvote"
+          expect{post :slack, post_params}.not_to change{teamgif.reload.votes}
+          Timecop.freeze(Time.now + 8.days)
+          expect{post :slack, post_params}.to change{teamgif.reload.votes}.by(-1)
+        end
       end
     end
+
     context "should work more than one team belong to the same user" do
       let(:user) { FactoryGirl.create(:user, email: Faker::Internet.email) }
       let(:team1) { FactoryGirl.create(:team, user: user, webhook: "http://webook1.com/") }
