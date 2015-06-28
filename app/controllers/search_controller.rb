@@ -9,84 +9,80 @@ class SearchController < ApplicationController
   end
 
   def slack
-    text = params[:text].downcase
-    channel = params[:channel_name]
-    username = params[:user_name]
-    domain = params[:team_domain]
-
-    @team = Team.find_by_domain domain
-    return render json: 'Team not found' unless @team
-    if !(text =~ /^(upvote|downvote)$/).nil?
-      vote text, domain, channel, username
-    else
-      found = find_gifs_for text
-      return no_gifs unless found
-      post_gif_to_slack(found, text, channel, username)
-    end
+    return render json: 'Team not found' unless team
+    return no_gifs unless process_command
     render nothing: true
   end
 
   private
 
-  def find_gifs_for(query)
-    @gifs = Gif.getgifs(query)
-    return false if (@gifs.empty?) || (!@gifs.sample.instance_of? Gif)
-    @team.gifs << @gifs.reject { |gif| @team.gifs.include?(gif) }
-    @gif = pick_random
-    @gif
+  def process_command
+    if (text =~ /^(upvote|downvote)$/).present?
+      vote
+    else
+      found_gif = find_gif
+      return false unless found_gif
+      post_gif_to_slack(found_gif, text, channel, username)
+    end
+    true
   end
 
-  # a pick raondom gif function that takes the votes into account
-  def pick_random
-    id_array = @gifs.map(&:id)
-    @teamgifs = @team.teamgifs.where(gif_id: id_array)
-    @total_votes = @teamgifs.map(&:votes).inject(0, &:+)
-    @total = 0 # makes this variable aviable in the map
-    # hacky way to pair gif_ids with their total of votes as a %
-    range_pairs = @teamgifs.collect.map { |gif| [gif.gif_id, @total += gif.votes * 100 / @total_votes] }.to_h
-    @random_number = rand(0..100) # make the random number avaible to the select
-    @selected_id = range_pairs.select { |_key, value| @random_number <= value }.keys.first
-    choosen_gif = @gifs.find { |gif| gif.id == @selected_id }
-    choosen_gif
+  def find_gif
+    return false if (gifs.empty?) || (!gifs.sample.instance_of? Gif)
+    store_teamgifs
+    select_random_gif
   end
 
-  def post_gif_to_slack(image, text, channel, username)
-    store_last_gif_data @team.domain, channel, image.id
-    SlackPoster.new(text, image, username, channel, @team).post_gif
+  def store_teamgifs
+    team.gifs << gifs.reject { |gif| team.gifs.include?(gif) }
+  end
+
+  def select_random_gif
+    gifs.find { |g| g.id == teamgifs.random_gif_id }
+  end
+
+  def post_gif_to_slack(gif, text, channel, username)
+    store_last_gif_data gif.id
+    SlackPoster.new(text, gif, username, channel, team).post_gif
   end
 
   def no_gifs
     render json: 'No gifs found'
   end
 
-  def store_last_gif_data(team_domain, channel, gif_id)
-    last = Lastgif.find(team_domain: team_domain, channel: channel).first
-    last.delete unless last.nil?
-    Lastgif.create team_domain: team_domain, channel: channel, gif_id: gif_id
+  def store_last_gif_data(gif_id)
+    last_gif.try(:delete)
+    Lastgif.create team_domain: team.domain, channel: channel, gif_id: gif_id
   end
 
-  def get_last_gif(team_domain, channel)
-    last_gif = Lastgif.find(team_domain: team_domain, channel: channel).first
-    last_gif
+  def last_gif
+    @last_gif ||= Lastgif.find(team_domain: team.domain, channel: channel).first
   end
 
-  def vote(query, domain, channel, username)
-    @team = Team.find_by_domain domain
-    last_gif = get_last_gif domain, channel
-    return false if last_gif.nil?
-    @gif = @team.teamgifs.find_by_gif_id(last_gif.gif_id)
-    return false if arleady_voted? domain, channel, username, @gif.id
-    @gif.upvote if query == 'upvote'
-    @gif.downvote if query == 'downvote'
-    Gifvotes.create team_domain: domain,
+  def vote
+    return false if already_voted?(last_teamgif.id)
+    last_teamgif.send(text)
+    create_gifvote(last_teamgif.id)
+    post_vote_to_slack
+  end
+
+  def post_vote_to_slack
+    SlackPoster.new(text, last_teamgif, username, channel, team).post_vote
+  end
+
+  def last_teamgif
+    @teamgif ||= team.teamgifs.find_by(gif_id: last_gif.gif_id)
+  end
+
+  def create_gifvote(gif_id)
+    Gifvotes.create team_domain: team.domain,
                     channel: channel,
                     username: username,
-                    gif_id: @gif.id,
+                    gif_id: gif_id,
                     expiration: Time.now + 1.week
-    SlackPoster.new(query, @gif, username, channel, @team).post_vote
   end
 
-  def arleady_voted?(domain, channel, username, gif_id)
+  def already_voted?(gif_id)
     vote = Gifvotes.find(team_domain: domain,
                          channel: channel,
                          username: username,
@@ -96,5 +92,33 @@ class SearchController < ApplicationController
       vote = nil
     end
     !vote.nil?
+  end
+
+  def text
+    params[:text].downcase
+  end
+
+  def channel
+    params[:channel_name]
+  end
+
+  def username
+    params[:user_name]
+  end
+
+  def domain
+    params[:team_domain]
+  end
+
+  def team
+    @team ||= Team.find_by_domain domain
+  end
+
+  def gifs
+    @gifs ||= Gif.getgifs(text)
+  end
+
+  def teamgifs
+    @teamgifs ||= team.teamgifs.where(gif_id: gifs.map(&:id))
   end
 end

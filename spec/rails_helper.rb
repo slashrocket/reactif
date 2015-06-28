@@ -19,12 +19,22 @@ end
 RSpec.configure do |config|
 
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner[:active_record].strategy = :transaction
+    DatabaseCleaner[:ohm].strategy = :truncation
     DatabaseCleaner.clean_with(:truncation)
   end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+
   config.include FactoryGirl::Syntax::Methods
 
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
 
   config.infer_spec_type_from_file_location!
 end
